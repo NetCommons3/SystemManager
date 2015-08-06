@@ -31,7 +31,9 @@ class SystemManagerController extends SystemManagerAppController {
  *
  * @var array
  */
-	//public $components = array();
+	public $components = array(
+		'ControlPanel.ControlPanelLayout',
+	);
 
 /**
  * index
