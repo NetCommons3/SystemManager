@@ -34,7 +34,7 @@
         }
     ],
     "type":        "cakephp-plugin",
-    "keywords":    ["cakephp", "system-manager"],
+    "keywords":    ["cakephp", "system_manager"],
     "config": {
         "vendor-dir": "vendors"
     }
