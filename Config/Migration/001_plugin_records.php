@@ -47,10 +47,10 @@ class PluginRecords extends NetCommonsMigration {
 				'key' => 'system_manager',
 				'namespace' => 'netcommons/system-manager',
 				'name' => 'システム管理',
-				'type' => 2,
+				'type' => 3,
 				'default_action' => 'system_manager/index',
 				'default_setting_action' => '',
-				'weight' => 7,
+				'weight' => 8,
 			),
 			//英語
 			array(
@@ -58,10 +58,10 @@ class PluginRecords extends NetCommonsMigration {
 				'key' => 'system_manager',
 				'namespace' => 'netcommons/system-manager',
 				'name' => 'System Controller',
-				'type' => 2,
+				'type' => 3,
 				'default_action' => 'system_manager/index',
 				'default_setting_action' => '',
-				'weight' => 7,
+				'weight' => 8,
 			),
 		),
 		'PluginsRole' => array(
