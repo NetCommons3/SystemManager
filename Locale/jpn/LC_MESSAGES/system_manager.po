@@ -1,0 +1,130 @@
+# LANGUAGE translation of CakePHP Application
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
+"Last-Translator: NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+msgid "Tab.system_manager"
+msgstr "一般設定"
+
+msgid "Tab.web_server"
+msgstr "サーバ設定"
+
+msgid "Tab.mail_server"
+msgstr "メール設定"
+
+msgid "Tab.auth_settings"
+msgstr "ログイン・ログアウト"
+
+msgid "Tab.developer"
+msgstr "開発者向け"
+
+
+msgid "App.default_timezone"
+msgstr "デフォルトのタイムゾーン"
+
+msgid "App.disk_for_group_room"
+msgstr "グループルームの容量"
+
+msgid "App.disk_for_group_room description"
+msgstr "各グループルームにアップロードできるファイルの総量を指定します。"
+
+msgid "App.disk_for_private_room"
+msgstr "プライベートルームの容量"
+
+msgid "App.disk_for_private_room description"
+msgstr "各プライベートルームにアップロードできるファイルの総量を指定します。"
+
+
+msgid "Session.ini.session.cookie_lifetime"
+msgstr "自動ログアウトするまでの時間"
+
+msgid "Session.ini.session.cookie_lifetime description"
+msgstr "ログインした後、ここで設定した時間の間にブラウザから要求がないと自動的にログアウトします。"
+
+msgid "AuthGeneral.use_ssl"
+msgstr "SSLを有効にする"
+
+msgid "AuthGeneral.use_ssl description"
+msgstr "サーバ上でSSLの設定を行わないと上記の設定は有効になりません。共有SSLでは、動作しない場合があります。"
+
+
+msgid "Php.memory_limit"
+msgstr "PHP最大メモリ数"
+
+
+msgid "Proxy.use_proxy"
+msgstr "プロキシサーバを使用する"
+
+msgid "Proxy.host"
+msgstr "プロキシホスト"
+
+msgid "Proxy.host description"
+msgstr "プロキシ経由でRSS/ATOMを取得する場合、ここにそのホスト名またはIPを記述します。"
+
+msgid "Proxy.port"
+msgstr "プロキシポート番号"
+
+msgid "Proxy.port description"
+msgstr "プロキシを経由する場合、そのポート番号(デフォルト:8080)を数字で入力します。"
+
+msgid "Proxy.user"
+msgstr "プロキシユーザ名"
+
+msgid "Proxy.user description"
+msgstr "プロキシが認証を必要とする場合、そのユーザ名を入力します。必要がなければ空欄のままにします。"
+
+msgid "Proxy.pass"
+msgstr "プロキシパスワード"
+
+msgid "Proxy.pass description"
+msgstr "プロキシが認証を必要とする場合、そのパスワードを入力します。必要がなければ空欄のままにします。"
+
+
+msgid "Mail.from"
+msgstr "送信者メールアドレス"
+
+msgid "Mail.from_name"
+msgstr "送信者"
+
+msgid "Mail.from_name description"
+msgstr "メール送信の際に送信者として表示される名前を入力してください。"
+
+msgid "Mail.messageType"
+msgstr "メール形式"
+
+msgid "Mail.transport"
+msgstr "メール送信方法"
+
+msgid "Mail.transport description"
+msgstr "メールを送信する方法を選択してください。デフォルトではSMTPサーバを使用します。"
+
+msgid "Mail.sendmail"
+msgstr "sendmailへのパス"
+
+msgid "Mail.smtp.host"
+msgstr "SMTPサーバアドレス"
+
+msgid "Mail.smtp.host description"
+msgstr "SMTPサーバのホスト名、またはIPアドレスの一覧を記入してください。ホスト名、IPアドレスの後に「:」区切りでポート番号も指定可能です。"
+
+msgid "Mail.smtp.port"
+msgstr "SMTPポート番号"
+
+msgid "Mail.smtp.port description"
+msgstr "ポート番号を入力してください。"
+
+msgid "Mail.smtp.user"
+msgstr "SMTPAuthユーザ名"
+
+msgid "Mail.smtp.pass"
+msgstr "SMTPAuthパスワード"

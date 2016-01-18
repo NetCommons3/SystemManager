@@ -1,0 +1,130 @@
+# LANGUAGE translation of CakePHP Application
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
+"Last-Translator: NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+msgid "Tab.system_manager"
+msgstr "一般設定"
+
+msgid "Tab.web_server"
+msgstr "サーバ設定"
+
+msgid "Tab.mail_server"
+msgstr "メール設定"
+
+msgid "Tab.auth_settings"
+msgstr "ログイン・ログアウト"
+
+msgid "Tab.developer"
+msgstr "開発者向け"
+
+
+msgid "App.default_timezone"
+msgstr "Default timezone"
+
+msgid "App.disk_for_group_room"
+msgstr "Disk space for group room"
+
+msgid "App.disk_for_group_room description"
+msgstr "Set the limit of the total amount of files which can be stored in each grouproom."
+
+msgid "App.disk_for_private_room"
+msgstr "Disk space for private room"
+
+msgid "App.disk_for_private_room description"
+msgstr "Set the limit of the total amount of files which can be stored in each privateroom."
+
+msgid "Session.ini.session.cookie_lifetime"
+msgstr "Time for automatic logout"
+
+msgid "Session.ini.session.cookie_lifetime description"
+msgstr "If user login while setting the system will not anwers request from the browser,Automatically Logout."
+
+
+msgid "AuthGeneral.use_ssl"
+msgstr "Use SSL for login?"
+
+msgid "AuthGeneral.use_ssl description"
+msgstr "To effective this setting you have to set up SSL on the server first."
+
+
+msgid "Php.memory_limit"
+msgstr "Maximum number of memories"
+
+
+msgid "Proxy.use_proxy"
+msgstr "Use the proxy server"
+
+msgid "Proxy.host"
+msgstr "Proxy host"
+
+msgid "Proxy.host description"
+msgstr "If you get RSS/ATOM via a proxy server, set the host's name or IP here."
+
+msgid "Proxy.port"
+msgstr "Proxy port"
+
+msgid "Proxy.port description"
+msgstr "Enter the proxy port number (Default:8080) if you useproxies"
+
+msgid "Proxy.user"
+msgstr "Proxy user"
+
+msgid "Proxy.user description"
+msgstr "If your proxy server needs BASIC authentication, set the user's name. Else, leave blank"
+
+msgid "Proxy.pass"
+msgstr "Proxy password"
+
+msgid "Proxy.pass description"
+msgstr "If your proxy server needs BASIC authentication, set the password. Else, leave blank"
+
+
+msgid "Mail.from"
+msgstr "FROM address"
+
+msgid "Mail.from_name"
+msgstr "FROM name"
+
+msgid "Mail.from_name description"
+msgstr "Please input the name which is indicated in the case of mail transmission as the transmission person"
+
+msgid "Mail.messageType"
+msgstr "Mail format"
+
+msgid "Mail.transport"
+msgstr "Mail delivery method"
+
+msgid "Mail.transport description"
+msgstr "Please enter the method used to deliver mail. Default seting is \"SMTP\""
+
+msgid "Mail.sendmail"
+msgstr "Path to sendmail"
+
+msgid "Mail.smtp.host"
+msgstr "SMTP host(s)"
+
+msgid "Mail.smtp.host description"
+msgstr "Please enter the host name or IP addresses of SMTP servers."
+
+msgid "Mail.smtp.port"
+msgstr "SMTP port"
+
+msgid "Mail.smtp.port description"
+msgstr "Please enter the port number."
+
+msgid "Mail.smtp.user"
+msgstr "SMTPAuth username"
+
+msgid "Mail.smtp.pass"
+msgstr "SMTPAuth password"

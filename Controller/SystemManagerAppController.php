@@ -20,16 +20,26 @@ App::uses('AppController', 'Controller');
 class SystemManagerAppController extends AppController {
 
 /**
- * use component
+ * 使用コンポーネント
  *
  * @var array
  */
 	public $components = array(
-		//アクセスの権限
+		'ControlPanel.ControlPanelLayout',
+		'M17n.SwitchLanguage',
 		'NetCommons.Permission' => array(
 			'type' => PermissionComponent::CHECK_TYEP_SYSTEM_PLUGIN,
 			'allow' => array()
 		),
 		'Security',
+	);
+
+/**
+ * 使用ヘルパー
+ *
+ * @var array
+ */
+	public $helpers = array(
+		'SystemManager.SystemManager',
 	);
 }

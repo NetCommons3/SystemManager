@@ -1,6 +1,6 @@
 <?php
 /**
- * SystemManager index template
+ * システム管理【ログイン・ログアウト】テンプレート
  *
  * @author Noriko Arai <arai@nii.ac.jp>
  * @author Shohei Nakajima <nakajimashouhei@gmail.com>
@@ -9,4 +9,8 @@
  * @copyright Copyright 2014, NetCommons Project
  */
 ?>
+
+<?php echo $this->SystemManager->tabs(); ?>
+
 <div></div>
+

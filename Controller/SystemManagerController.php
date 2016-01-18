@@ -12,7 +12,7 @@
 App::uses('SystemManagerAppController', 'SystemManager.Controller');
 
 /**
- * SystemManager Controller
+ * システム管理【一般設定】
  *
  * @author Shohei Nakajima <nakajimashouhei@gmail.com>
  * @package NetCommons\SystemManager\Controller
@@ -24,40 +24,9 @@ class SystemManagerController extends SystemManagerAppController {
  *
  * @var array
  */
-	//public $uses = array();
-
-/**
- * use component
- *
- * @var array
- */
-	public $components = array(
-		'ControlPanel.ControlPanelLayout',
+	public $uses = array(
+		'SiteManager.SiteSetting',
 	);
-
-/**
- * index
- *
- * @return void
- */
-	public function index() {
-	}
-
-/**
- * view
- *
- * @return void
- */
-	public function view() {
-	}
-
-/**
- * add
- *
- * @return void
- */
-	public function add() {
-	}
 
 /**
  * edit
@@ -65,13 +34,26 @@ class SystemManagerController extends SystemManagerAppController {
  * @return void
  */
 	public function edit() {
-	}
+		//リクエストセット
+		if ($this->request->is('post')) {
 
-/**
- * delete
- *
- * @return void
- */
-	public function delete() {
+		} else {
+			$settings = $this->SiteSetting->find('all', array(
+				'recursive' => -1,
+				'conditions' => array('key' => array(
+					//サイトタイムゾーン
+					'App.default_timezone',
+					//グループルームの容量
+					'App.disk_for_group_room',
+					//プライベートルームの容量
+					'App.disk_for_private_room',
+				))
+			));
+			$this->request->data['SiteSetting'] = Hash::combine($settings,
+				'{n}.SiteSetting.language_id',
+				'{n}.SiteSetting',
+				'{n}.SiteSetting.key'
+			);
+		}
 	}
 }
