@@ -38,22 +38,16 @@ class AuthSettingsController extends SystemManagerAppController {
 		if ($this->request->is('post')) {
 
 		} else {
-			$settings = $this->SiteSetting->find('all', array(
-				'recursive' => -1,
-				'conditions' => array('SiteSetting.key' => array(
+			$this->request->data['SiteSetting'] = $this->SiteSetting->getSiteSettingForEdit(
+				array('SiteSetting.key' => array(
 					// * 自動ログアウトする時間(cookie_lifetime)(6時間)
 					'Session.ini.session.cookie_lifetime',
 					// * 自動ログアウトする時間(gc_maxlifetime)(6時間)
 					'Session.ini.session.gc_maxlifetime',
 					// * SSLを有効にする
 					'Auth.use_ssl',
-				))
+				)
 			));
-			$this->request->data['SiteSetting'] = Hash::combine($settings,
-				'{n}.SiteSetting.language_id',
-				'{n}.SiteSetting',
-				'{n}.SiteSetting.key'
-			);
 		}
 	}
 }

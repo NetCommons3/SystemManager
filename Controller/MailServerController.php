@@ -38,9 +38,8 @@ class MailServerController extends SystemManagerAppController {
 		if ($this->request->is('post')) {
 
 		} else {
-			$settings = $this->SiteSetting->find('all', array(
-				'recursive' => -1,
-				'conditions' => array('SiteSetting.key' => array(
+			$this->request->data['SiteSetting'] = $this->SiteSetting->getSiteSettingForEdit(
+				array('SiteSetting.key' => array(
 					// * 送信者メールアドレス
 					'Mail.from',
 					// * 送信者
@@ -59,13 +58,8 @@ class MailServerController extends SystemManagerAppController {
 					'Mail.smtp.user',
 					// ** SMTPAuthパスワード
 					'Mail.smtp.pass',
-				))
+				)
 			));
-			$this->request->data['SiteSetting'] = Hash::combine($settings,
-				'{n}.SiteSetting.language_id',
-				'{n}.SiteSetting',
-				'{n}.SiteSetting.key'
-			);
 		}
 	}
 }

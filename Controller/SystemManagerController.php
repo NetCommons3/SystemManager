@@ -38,22 +38,16 @@ class SystemManagerController extends SystemManagerAppController {
 		if ($this->request->is('post')) {
 
 		} else {
-			$settings = $this->SiteSetting->find('all', array(
-				'recursive' => -1,
-				'conditions' => array('SiteSetting.key' => array(
+			$this->request->data['SiteSetting'] = $this->SiteSetting->getSiteSettingForEdit(
+				array('SiteSetting.key' => array(
 					// * サイトタイムゾーン
 					'App.default_timezone',
 					// * グループルームの容量
 					'App.disk_for_group_room',
 					// * プライベートルームの容量
 					'App.disk_for_private_room',
-				))
+				)
 			));
-			$this->request->data['SiteSetting'] = Hash::combine($settings,
-				'{n}.SiteSetting.language_id',
-				'{n}.SiteSetting',
-				'{n}.SiteSetting.key'
-			);
 		}
 	}
 }

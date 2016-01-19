@@ -38,9 +38,8 @@ class WebServerController extends SystemManagerAppController {
 		if ($this->request->is('post')) {
 
 		} else {
-			$settings = $this->SiteSetting->find('all', array(
-				'recursive' => -1,
-				'conditions' => array('SiteSetting.key' => array(
+			$this->request->data['SiteSetting'] = $this->SiteSetting->getSiteSettingForEdit(
+				array('SiteSetting.key' => array(
 					// * システムコンフィグ
 					// ** PHP最大メモリ数
 					'Php.memory_limit',
@@ -59,13 +58,8 @@ class WebServerController extends SystemManagerAppController {
 					'Proxy.user',
 					// ** プロキシパスワード
 					'Proxy.pass',
-				))
+				)
 			));
-			$this->request->data['SiteSetting'] = Hash::combine($settings,
-				'{n}.SiteSetting.language_id',
-				'{n}.SiteSetting',
-				'{n}.SiteSetting.key'
-			);
 		}
 	}
 }
