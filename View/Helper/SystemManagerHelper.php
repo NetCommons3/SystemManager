@@ -81,6 +81,9 @@ class SystemManagerHelper extends AppHelper {
 		$this->NetCommonsHtml->css(array(
 			'/site_manager/css/style.css', '/data_types/css/style.css'
 		));
+		$this->NetCommonsHtml->script(array(
+			'/system_manager/js/system_manager.js'
+		));
 		parent::beforeRender($viewFile);
 	}
 

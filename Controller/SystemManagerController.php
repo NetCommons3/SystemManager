@@ -40,12 +40,12 @@ class SystemManagerController extends SystemManagerAppController {
 		} else {
 			$settings = $this->SiteSetting->find('all', array(
 				'recursive' => -1,
-				'conditions' => array('key' => array(
-					//サイトタイムゾーン
+				'conditions' => array('SiteSetting.key' => array(
+					// * サイトタイムゾーン
 					'App.default_timezone',
-					//グループルームの容量
+					// * グループルームの容量
 					'App.disk_for_group_room',
-					//プライベートルームの容量
+					// * プライベートルームの容量
 					'App.disk_for_private_room',
 				))
 			));

@@ -9,7 +9,7 @@
  * @copyright Copyright 2014, NetCommons Project
  */
 
-App::uses('SiteManagerAppController', 'SiteManager.Controller');
+App::uses('SystemManagerAppController', 'SystemManager.Controller');
 
 /**
  * システム管理【メール設定】
@@ -17,14 +17,16 @@ App::uses('SiteManagerAppController', 'SiteManager.Controller');
  * @author Shohei Nakajima <nakajimashouhei@gmail.com>
  * @package NetCommons\SystemManager\Controller
  */
-class MailServerController extends SiteManagerAppController {
+class MailServerController extends SystemManagerAppController {
 
 /**
  * use model
  *
  * @var array
  */
-	//public $uses = array();
+	public $uses = array(
+		'SiteManager.SiteSetting',
+	);
 
 /**
  * edit
@@ -32,5 +34,38 @@ class MailServerController extends SiteManagerAppController {
  * @return void
  */
 	public function edit() {
+		//リクエストセット
+		if ($this->request->is('post')) {
+
+		} else {
+			$settings = $this->SiteSetting->find('all', array(
+				'recursive' => -1,
+				'conditions' => array('SiteSetting.key' => array(
+					// * 送信者メールアドレス
+					'Mail.from',
+					// * 送信者
+					'Mail.from_name',
+					// * メール形式
+					'Mail.messageType',
+					// * メール送信方法
+					'Mail.transport',
+					// ** sendmailへのパス
+					'Mail.sendmail',
+					// ** SMTPサーバアドレス
+					'Mail.smtp.host',
+					// ** SMTPポート番号
+					'Mail.smtp.port',
+					// ** SMTPAuthユーザ名
+					'Mail.smtp.user',
+					// ** SMTPAuthパスワード
+					'Mail.smtp.pass',
+				))
+			));
+			$this->request->data['SiteSetting'] = Hash::combine($settings,
+				'{n}.SiteSetting.language_id',
+				'{n}.SiteSetting',
+				'{n}.SiteSetting.key'
+			);
+		}
 	}
 }

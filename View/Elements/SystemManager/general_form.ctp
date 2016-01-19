@@ -1,6 +1,6 @@
 <?php
 /**
- * 一般設定Element
+ * 一般設定 Element
  *
  * @author Noriko Arai <arai@nii.ac.jp>
  * @author Shohei Nakajima <nakajimashouhei@gmail.com>
@@ -9,7 +9,7 @@
  * @copyright Copyright 2014, NetCommons Project
  */
 
-App::uses('M17nHelper', 'M17n.View/Helper');
+//App::uses('M17nHelper', 'M17n.View/Helper');
 ?>
 
 <article>

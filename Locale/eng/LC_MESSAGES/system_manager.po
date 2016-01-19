@@ -44,12 +44,12 @@ msgstr "Disk space for private room"
 msgid "App.disk_for_private_room description"
 msgstr "Set the limit of the total amount of files which can be stored in each privateroom."
 
+
 msgid "Session.ini.session.cookie_lifetime"
 msgstr "Time for automatic logout"
 
 msgid "Session.ini.session.cookie_lifetime description"
 msgstr "If user login while setting the system will not anwers request from the browser,Automatically Logout."
-
 
 msgid "AuthGeneral.use_ssl"
 msgstr "Use SSL for login?"
@@ -61,6 +61,9 @@ msgstr "To effective this setting you have to set up SSL on the server first."
 msgid "Php.memory_limit"
 msgstr "Maximum number of memories"
 
+
+msgid "Proxy server"
+msgstr ""
 
 msgid "Proxy.use_proxy"
 msgstr "Use the proxy server"
@@ -101,6 +104,12 @@ msgstr "Please input the name which is indicated in the case of mail transmissio
 
 msgid "Mail.messageType"
 msgstr "Mail format"
+
+msgid "HTML"
+msgstr ""
+
+msgid "Plan text"
+msgstr ""
 
 msgid "Mail.transport"
 msgstr "Mail delivery method"

@@ -9,7 +9,7 @@
  * @copyright Copyright 2014, NetCommons Project
  */
 
-App::uses('SiteManagerAppController', 'SiteManager.Controller');
+App::uses('SystemManagerAppController', 'SystemManager.Controller');
 
 /**
  * システム管理【開発者向け】
@@ -17,14 +17,16 @@ App::uses('SiteManagerAppController', 'SiteManager.Controller');
  * @author Shohei Nakajima <nakajimashouhei@gmail.com>
  * @package NetCommons\SystemManager\Controller
  */
-class DeveloperController extends SiteManagerAppController {
+class DeveloperController extends SystemManagerAppController {
 
 /**
  * use model
  *
  * @var array
  */
-	//public $uses = array();
+	public $uses = array(
+		'SiteManager.SiteSetting',
+	);
 
 /**
  * edit
@@ -32,5 +34,22 @@ class DeveloperController extends SiteManagerAppController {
  * @return void
  */
 	public function edit() {
+		//リクエストセット
+		if ($this->request->is('post')) {
+
+		} else {
+			$settings = $this->SiteSetting->find('all', array(
+				'recursive' => -1,
+				'conditions' => array('SiteSetting.key' => array(
+					// * デバッグ出力
+					'debug',
+				))
+			));
+			$this->request->data['SiteSetting'] = Hash::combine($settings,
+				'{n}.SiteSetting.language_id',
+				'{n}.SiteSetting',
+				'{n}.SiteSetting.key'
+			);
+		}
 	}
 }
