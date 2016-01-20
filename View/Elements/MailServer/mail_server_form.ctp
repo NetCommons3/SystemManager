@@ -8,6 +8,8 @@
  * @license http://www.netcommons.org/license.txt NetCommons License
  * @copyright Copyright 2014, NetCommons Project
  */
+
+App::uses('SiteSetting', 'SiteManager.Model');
 ?>
 
 <article>
@@ -21,52 +23,38 @@
 
 	<?php echo $this->SystemManager->inputCommon('SiteSetting', 'Mail.messageType', array(
 			'type' => 'radio',
-			'options' => array(
-				'html' => __d('system_manager', 'HTML'),
-				'text' => __d('system_manager', 'Plan text'),
-			),
+			'options' => SiteSetting::$mailMessageType,
 		)); ?>
 
 	<?php $transportDomId = $this->SystemManager->domId('SiteSetting.Mail.transport'); ?>
 	<div ng-init="<?php echo $transportDomId . ' = \'' . h($this->SystemManager->getValue('SiteSetting', 'Mail.transport') . '\''); ?>">
 		<?php echo $this->SystemManager->inputCommon('SiteSetting', 'Mail.transport', array(
 			'type' => 'select',
-			'options' => array(
-				'phpmail' => __d('system_manager', 'PHP mail()'),
-				'sendmail' => __d('system_manager', 'sendmail'),
-				'smtp' => __d('system_manager', 'SMTP'),
-			),
+			'options' => SiteSetting::$mailTransport,
 			'ng-model' => $transportDomId,
-			//'ng-change' => 'select(\'' . $transportDomId . '\', $event)',
 			'description' => true,
 		)); ?>
 
-		<div ng-show="<?php echo $transportDomId; ?> === 'sendmail'">
-			<?php echo $this->SystemManager->inputCommon('SiteSetting', 'Mail.sendmail', array(
-					'required' => true,
-					'description' => true,
-				)); ?>
-		</div>
-
-		<div ng-show="<?php echo $transportDomId; ?> === 'smtp'">
+		<div ng-show="<?php echo $transportDomId . ' === \'' . SiteSetting::MAIL_TRANSPORT_SMTP . '\''; ?>">
 			<?php echo $this->SystemManager->inputCommon('SiteSetting', 'Mail.smtp.host', array(
 					'required' => true,
 					'description' => true,
 				)); ?>
 		</div>
 
-		<div ng-show="<?php echo $transportDomId; ?> === 'smtp'">
+		<div ng-show="<?php echo $transportDomId . ' === \'' . SiteSetting::MAIL_TRANSPORT_SMTP . '\''; ?>">
 			<?php echo $this->SystemManager->inputCommon('SiteSetting', 'Mail.smtp.port', array(
+					'required' => true,
 					'description' => true,
 				)); ?>
 		</div>
 
-		<div ng-show="<?php echo $transportDomId; ?> === 'smtp'">
+		<div ng-show="<?php echo $transportDomId . ' === \'' . SiteSetting::MAIL_TRANSPORT_SMTP . '\''; ?>">
 			<?php echo $this->SystemManager->inputCommon('SiteSetting', 'Mail.smtp.user', array(
 				)); ?>
 		</div>
 
-		<div ng-show="<?php echo $transportDomId; ?> === 'smtp'">
+		<div ng-show="<?php echo $transportDomId . ' === \'' . SiteSetting::MAIL_TRANSPORT_SMTP . '\''; ?>">
 			<?php echo $this->SystemManager->inputCommon('SiteSetting', 'Mail.smtp.pass', array(
 					'type' => 'password'
 				)); ?>

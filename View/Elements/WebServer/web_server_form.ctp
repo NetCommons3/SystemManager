@@ -8,12 +8,14 @@
  * @license http://www.netcommons.org/license.txt NetCommons License
  * @copyright Copyright 2014, NetCommons Project
  */
+
+App::uses('SiteSetting', 'SiteManager.Model');
 ?>
 
 <article>
 	<?php echo $this->SystemManager->inputCommon('SiteSetting', 'Php.memory_limit', array(
 		'type' => 'select',
-		'options' => array(),
+		'options' => SiteSetting::$memoryLimit,
 	)); ?>
 
 	<?php echo $this->SystemManager->inputCommon('SiteSetting', 'Session.ini.session.name'); ?>

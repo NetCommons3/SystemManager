@@ -26,12 +26,14 @@
 		<div ng-show="<?php echo $domId; ?>">
 			<?php echo $this->SystemManager->inputCommon('SiteSetting', 'Proxy.host', array(
 					'description' => true,
+					'required' => true,
 				)); ?>
 		</div>
 
 		<div ng-show="<?php echo $domId; ?>">
 			<?php echo $this->SystemManager->inputCommon('SiteSetting', 'Proxy.port', array(
 					'description' => true,
+					'required' => true,
 				)); ?>
 		</div>
 

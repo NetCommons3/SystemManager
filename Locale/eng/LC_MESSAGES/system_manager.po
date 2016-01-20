@@ -44,6 +44,9 @@ msgstr "Disk space for private room"
 msgid "App.disk_for_private_room description"
 msgstr "Set the limit of the total amount of files which can be stored in each privateroom."
 
+msgid "Unlimited"
+msgstr ""
+
 
 msgid "Session.ini.session.cookie_lifetime"
 msgstr "Time for automatic logout"

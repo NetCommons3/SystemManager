@@ -1,4 +1,3 @@
-# LANGUAGE translation of CakePHP Application
 # Copyright YEAR NAME <EMAIL@ADDRESS>
 #
 #, fuzzy
@@ -43,6 +42,9 @@ msgstr "プライベートルームの容量"
 
 msgid "App.disk_for_private_room description"
 msgstr "各プライベートルームにアップロードできるファイルの総量を指定します。"
+
+msgid "Unlimited"
+msgstr "無制限"
 
 
 msgid "Session.ini.session.cookie_lifetime"
