@@ -154,7 +154,22 @@ msgstr "SMTPAuthパスワード"
 msgid "debug"
 msgstr "デバッグ出力"
 
+msgid "0: No error messages, errors, or warnings shown. Flash messages redirect."
+msgstr "0: エラー・メッセージ、エラー、警告は表示されません。フラッシュメッセージがリダイレクトされます。"
+
+msgid "1: Errors and warnings shown, model caches refreshed, flash messages halted."
+msgstr "1: エラーと警告が表示され、モデルのキャッシュがリフレッシュ、フラッシュメッセージが停止します。"
+
+msgid "2: As in 1, but also with full debug messages and SQL output."
+msgstr "2: 1だけでなく、完全なデバッグメッセージやSQLも出力します。"
+
 msgid "debug description"
-msgstr "0: No error messages, errors, or warnings shown. Flash messages redirect.<br>"
-"1: Errors and warnings shown, model caches refreshed, flash messages halted.<br>"
-"2: As in 1, but also with full debug messages and SQL output."
+msgstr "0: エラー・メッセージ、エラー、警告は表示されません。フラッシュメッセージがリダイレクトされます。<br>"
+"1: エラーと警告が表示され、モデルのキャッシュがリフレッシュ、フラッシュメッセージが停止します。<br>"
+"2: 1だけでなく、完全なデバッグメッセージやSQLも出力します。"
+
+msgid "Only for this session"
+msgstr "このセッションのみ反映する"
+
+msgid "Save the setting in the DB"
+msgstr "設定をデータベースに保存する"

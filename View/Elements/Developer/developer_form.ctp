@@ -13,13 +13,22 @@ App::uses('SiteSetting', 'SiteManager.Model');
 ?>
 
 <article>
+	<?php echo $this->NetCommonsForm->radio('SiteSetting.only_session',
+			array(
+				1 => __d('system_manager', 'Only for this session'),
+				0 => __d('system_manager', 'Save the setting in the DB')
+			),
+			array(
+				'div' => array('class' => 'form-control form-inline'),
+				'separator' => '<span class="radio-separator"></span>'
+			)
+		); ?>
+
+	<hr>
+
 	<?php echo $this->SystemManager->inputCommon('SiteSetting', 'debug', array(
 		'type' => 'select',
-		'options' => array(
-			'0' => __d('system_manager', '0: No error messages, errors, or warnings shown. Flash messages redirect.'),
-			'1' => __d('system_manager', '1: Errors and warnings shown, model caches refreshed, flash messages halted.'),
-			'2' => __d('system_manager', '2: As in 1, but also with full debug messages and SQL output.'),
-		),
+		'options' => SiteSetting::$debugOptions,
 		'description' => true,
 	)); ?>
 </article>

@@ -37,7 +37,21 @@ class DeveloperController extends SystemManagerAppController {
 		//リクエストセット
 		if ($this->request->is('post')) {
 			//登録処理
-			$this->SiteManager->saveData();
+			if (! $this->request->data['SiteSetting']['only_session']) {
+				$this->Session->write('debug', null);
+				$this->SiteManager->saveData();
+			} else {
+				$this->SiteSetting->validateDeveloper($this->request->data);
+				if (! $this->SiteSetting->validationErrors) {
+						$this->Session->write('debug', (int)$this->request->data['SiteSetting']['debug']['0']['value']);
+						$this->NetCommons->setFlashNotification(__d('net_commons', 'Successfully saved.'), array(
+							'class' => 'success',
+						));
+						$this->redirect($this->referer());
+				} else {
+					$this->NetCommons->handleValidationError($this->SiteSetting->validationErrors);
+				}
+			}
 
 		} else {
 			$this->request->data['SiteSetting'] = $this->SiteSetting->getSiteSettingForEdit(
@@ -46,6 +60,11 @@ class DeveloperController extends SystemManagerAppController {
 					'debug',
 				)
 			));
+			$onlySession = $this->Session->read('debug');
+			$this->request->data['SiteSetting']['only_session'] = isset($onlySession);
+			if ($this->request->data['SiteSetting']['only_session']) {
+				$this->request->data['SiteSetting']['debug']['0']['value'] = $onlySession;
+			}
 		}
 	}
 }

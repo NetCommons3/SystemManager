@@ -140,3 +140,27 @@ msgstr "SMTPAuth username"
 
 msgid "Mail.smtp.pass"
 msgstr "SMTPAuth password"
+
+#開発者向け
+msgid "debug"
+msgstr "Output debug"
+
+msgid "0: No error messages, errors, or warnings shown. Flash messages redirect."
+msgstr ""
+
+msgid "1: Errors and warnings shown, model caches refreshed, flash messages halted.<br>"
+msgstr ""
+
+msgid "2: As in 1, but also with full debug messages and SQL output."
+msgstr ""
+
+msgid "debug description"
+msgstr "0: No error messages, errors, or warnings shown. Flash messages redirect.<br>"
+"1: Errors and warnings shown, model caches refreshed, flash messages halted.<br>"
+"2: As in 1, but also with full debug messages and SQL output."
+
+msgid "Only for this session"
+msgstr ""
+
+msgid "Save the setting in the DB"
+msgstr ""
