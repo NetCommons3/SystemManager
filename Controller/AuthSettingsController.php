@@ -14,6 +14,18 @@ App::uses('SystemManagerAppController', 'SystemManager.Controller');
 /**
  * システム管理【認証設定】
  *
+ * ログイン・ログアウトの設定を行う。
+ *
+ * 通常のログインとは別の認証システム(LDAPやShibbolethなど)の設定は、
+ * AuthXxxxx/View/Elements/auth_setting.ctpファイルを作成することで自動的に読み込む。
+ * また、site_settingsテーブル以外に登録する際は、AuthXxxxxSettingにsaveSetting()を作成して下さい。
+ *
+ * #### サンプルコード
+ * ##### AuthLdapSetting
+ * ```
+ *
+ * ```
+ *
  * @author Shohei Nakajima <nakajimashouhei@gmail.com>
  * @package NetCommons\SystemManager\Controller
  */
@@ -49,5 +61,29 @@ class AuthSettingsController extends SystemManagerAppController {
 				)
 			));
 		}
+
+		$this->set('authenticators', $this->getAuthenticators());
 	}
+
+/**
+ * 各ログインプラグインを取得する
+ *
+ * @return array authenticators
+ */
+	public function getAuthenticators() {
+		$authenticators = array();
+		$plugins = App::objects('plugins');
+		$matches = array();
+		foreach ($plugins as $plugin) {
+			if ($plugin === 'AuthGeneral') {
+				continue;
+			}
+			if (preg_match('/^Auth([A-Z0-9_][\w]+)/', $plugin, $matches)) {
+				$authenticators[$plugin] = $matches[1];
+			}
+		}
+
+		return $authenticators;
+	}
+
 }
