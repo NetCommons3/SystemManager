@@ -146,18 +146,8 @@ class SystemManagerHelper extends AppHelper {
 		$output = '';
 
 		$output .= '<ul class="nav nav-pills" role="tablist">';
-
-		$tabs = array(
-			'auth-common' => __d('site_manager', 'Auth common setting'),
-		);
-		foreach ($this->_View->viewVars['authenticators'] as $key => $title) {
-			$tagId = strtr(Inflector::underscore($key), '_', '-');
-			$tabs[$tagId] = $title;
-		}
-		$this->_View->viewVars['authTabs'] = $tabs;
-
-		$active = Hash::get($this->_View->viewVars, 'authTab');
-		foreach ($tabs as $key => $label) {
+		$active = Hash::get($this->_View->viewVars, 'activeAuthTab');
+		foreach ($this->_View->viewVars['authTabs'] as $key => $tab) {
 			if ($key === $active) {
 				$output .= '<li class="active">';
 			} else {
@@ -165,8 +155,8 @@ class SystemManagerHelper extends AppHelper {
 			}
 
 			$output .= '<a href="#' . $key . '" aria-controls="' . $key . '" role="tab" data-toggle="tab" ' .
-							'ng-click="' . $this->domId('authTab') . ' = \'' . $key . '\'">';
-			$output .= $label;
+							'ng-click="' . $this->domId('activeAuthTab') . ' = \'' . $key . '\'">';
+			$output .= $tab['label'];
 			$output .= '</a>';
 			$output .= '</li>';
 		}

@@ -14,11 +14,29 @@
 
 <?php echo $this->NetCommonsForm->create('SiteSetting', array(
 		'ng-controller' => 'SystemManager',
+		'ng-init' => $this->SystemManager->domId('activeAuthTab') . ' = \'' . h($activeAuthTab) . '\''
 	)); ?>
+
+	<?php $this->NetCommonsForm->unlockField('activeAuthTab'); ?>
+	<?php echo $this->NetCommonsForm->hidden('activeAuthTab', array(
+		'ng-value' => $this->SystemManager->domId('activeAuthTab')
+	)); ?>
+
+	<div>
+	<?php echo $this->SystemManager->authTabs(); ?>
 
 	<div class="panel panel-default">
 		<div class="panel-body">
-			<?php echo $this->element('AuthSettings/auth_form'); ?>
+			<div class="tab-content">
+				<?php foreach ($authTabs as $key => $tab) : ?>
+					<div id="<?php echo $key; ?>"
+							class="tab-pane<?php echo ($activeAuthTab === $key ? ' active' : ''); ?>" >
+
+						<?php echo $this->element($tab['element']); ?>
+					</div>
+				<?php endforeach; ?>
+			</div>
+
 		</div>
 
 		<div class="panel-footer text-center">
@@ -29,6 +47,5 @@
 				); ?>
 		</div>
 	</div>
-
 
 <?php echo $this->NetCommonsForm->end();

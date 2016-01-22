@@ -8,8 +8,25 @@
  * @license http://www.netcommons.org/license.txt NetCommons License
  * @copyright Copyright 2014, NetCommons Project
  */
+
+App::uses('SiteSetting', 'SiteManager.Model');
 ?>
 
 <article>
+	<?php echo $this->SystemManager->inputCommon('SiteSetting', 'Session.ini.session.cookie_lifetime', array(
+		'options' => SiteSetting::$sessionTimeout,
+		'description' => true
+	)); ?>
+
+	<?php echo $this->SystemManager->inputHidden('SiteSetting', 'Session.ini.session.gc_maxlifetime', '0'); ?>
+
+	<?php echo $this->SystemManager->inputCommon('SiteSetting', 'Auth.use_ssl', array(
+		'type' => 'radio',
+		'options' => array(
+			'1' => __d('net_commons', 'Yes'),
+			'0' => __d('net_commons', 'No'),
+		),
+		'description' => true
+	)); ?>
 
 </article>

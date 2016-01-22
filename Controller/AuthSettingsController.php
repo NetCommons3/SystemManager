@@ -13,19 +13,8 @@ App::uses('SystemManagerAppController', 'SystemManager.Controller');
 
 /**
  * システム管理【認証設定】
- *
  * ログイン・ログアウトの設定を行う。
- *
- * 通常のログインとは別の認証システム(LDAPやShibbolethなど)の設定は、
- * AuthXxxxx/View/Elements/auth_setting.ctpファイルを作成することで自動的に読み込む。
- * また、site_settingsテーブル以外に登録する際は、AuthXxxxxSettingにsaveSetting()を作成して下さい。
- *
- * #### サンプルコード
- * ##### AuthLdapSetting
- * ```
- *
- * ```
- *
+  *
  * @author Shohei Nakajima <nakajimashouhei@gmail.com>
  * @package NetCommons\SystemManager\Controller
  */
@@ -46,10 +35,22 @@ class AuthSettingsController extends SystemManagerAppController {
  * @return void
  */
 	public function edit() {
+		$this->_prepare();
+
 		//リクエストセット
 		if ($this->request->is('post')) {
+			$this->set('activeAuthTab', Hash::get($this->request->data['SiteSetting'], 'activeAuthTab', 'auth-general'));
+
+			// * 自動ログアウトする時間(gc_maxlifetime)
+			$this->request->data['SiteSetting']['Session.ini.session.gc_maxlifetime']['0']['value'] =
+							$this->request->data['SiteSetting']['Session.ini.session.cookie_lifetime']['0']['value'];
+
+			//登録処理
+			$this->SiteManager->saveData();
 
 		} else {
+			$this->set('activeAuthTab', Hash::get($this->request->query, 'activeAuthTab', 'auth-general'));
+
 			$this->request->data['SiteSetting'] = $this->SiteSetting->getSiteSettingForEdit(
 				array('SiteSetting.key' => array(
 					// * 自動ログアウトする時間(cookie_lifetime)(6時間)
@@ -62,28 +63,36 @@ class AuthSettingsController extends SystemManagerAppController {
 			));
 		}
 
-		$this->set('authenticators', $this->getAuthenticators());
+
 	}
 
 /**
- * 各ログインプラグインを取得する
+ * 前処理
+ * 他の認証の設定画面を組み込みについては、後で考える
  *
- * @return array authenticators
+ * @return array tabs
  */
-	public function getAuthenticators() {
-		$authenticators = array();
+	protected function _prepare() {
+		$tabs = array();
+
 		$plugins = App::objects('plugins');
-		$matches = array();
 		foreach ($plugins as $plugin) {
-			if ($plugin === 'AuthGeneral') {
+			$matches = array();
+			if (! preg_match('/^Auth([A-Z0-9_][\w]+)/', $plugin, $matches)) {
 				continue;
 			}
-			if (preg_match('/^Auth([A-Z0-9_][\w]+)/', $plugin, $matches)) {
-				$authenticators[$plugin] = $matches[1];
+
+			//elementを読み込み設定
+			$tagId = strtr(Inflector::underscore($plugin), '_', '-');
+			if ($plugin === 'AuthGeneral') {
+				$tabs[$tagId] = array(
+					'label' => __d('system_manager', 'Auth common setting'),
+					'element' => 'AuthSettings/auth_form'
+				);
 			}
 		}
 
-		return $authenticators;
+		$this->set('authTabs', $tabs);
 	}
 
 }

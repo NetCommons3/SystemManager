@@ -48,16 +48,38 @@ msgid "Unlimited"
 msgstr ""
 
 
+# ログイン・ログアウト
+msgid "Auth common setting"
+msgstr "General setting"
+
+msgid "%s setting"
+msgstr ""
+
 msgid "Session.ini.session.cookie_lifetime"
 msgstr "Time for automatic logout"
 
 msgid "Session.ini.session.cookie_lifetime description"
 msgstr "If user login while setting the system will not anwers request from the browser,Automatically Logout."
 
-msgid "AuthGeneral.use_ssl"
+msgid "%s minutes"
+msgstr ""
+
+msgid "%s hour"
+msgstr ""
+
+msgid "%s hours"
+msgstr ""
+
+msgid "%s day"
+msgstr ""
+
+msgid "%s days"
+msgstr ""
+
+msgid "Auth.use_ssl"
 msgstr "Use SSL for login?"
 
-msgid "AuthGeneral.use_ssl description"
+msgid "Auth.use_ssl description"
 msgstr "To effective this setting you have to set up SSL on the server first."
 
 

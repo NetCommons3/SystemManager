@@ -47,16 +47,38 @@ msgid "Unlimited"
 msgstr "無制限"
 
 
+# ログイン・ログアウト
+msgid "Auth common setting"
+msgstr "共通設定"
+
+msgid "%s setting"
+msgstr "%s 設定"
+
 msgid "Session.ini.session.cookie_lifetime"
 msgstr "自動ログアウトするまでの時間"
 
 msgid "Session.ini.session.cookie_lifetime description"
 msgstr "ログインした後、ここで設定した時間の間にブラウザから要求がないと自動的にログアウトします。"
 
-msgid "AuthGeneral.use_ssl"
+msgid "%s minutes"
+msgstr "%s分"
+
+msgid "%s hour"
+msgstr "%s時間"
+
+msgid "%s hours"
+msgstr "%s時間"
+
+msgid "%s day"
+msgstr "%s日"
+
+msgid "%s days"
+msgstr "%s日"
+
+msgid "Auth.use_ssl"
 msgstr "SSLを有効にする"
 
-msgid "AuthGeneral.use_ssl description"
+msgid "Auth.use_ssl description"
 msgstr "サーバ上でSSLの設定を行わないと上記の設定は有効になりません。共有SSLでは、動作しない場合があります。"
 
 
