@@ -14,7 +14,7 @@ App::uses('SystemManagerAppController', 'SystemManager.Controller');
 /**
  * システム管理【認証設定】
  * ログイン・ログアウトの設定を行う。
-  *
+ *
  * @author Shohei Nakajima <nakajimashouhei@gmail.com>
  * @package NetCommons\SystemManager\Controller
  */
@@ -62,8 +62,6 @@ class AuthSettingsController extends SystemManagerAppController {
 				)
 			));
 		}
-
-
 	}
 
 /**
