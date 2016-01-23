@@ -32,6 +32,7 @@ class SystemManagerAppController extends AppController {
 			'allow' => array()
 		),
 		'Security',
+		'SiteManager.SiteManager',
 	);
 
 /**

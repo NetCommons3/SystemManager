@@ -44,23 +44,51 @@ msgstr "Disk space for private room"
 msgid "App.disk_for_private_room description"
 msgstr "Set the limit of the total amount of files which can be stored in each privateroom."
 
+msgid "Unlimited"
+msgstr ""
+
+
+# ログイン・ログアウト
+msgid "Auth common setting"
+msgstr "General setting"
+
+msgid "%s setting"
+msgstr ""
+
 msgid "Session.ini.session.cookie_lifetime"
 msgstr "Time for automatic logout"
 
 msgid "Session.ini.session.cookie_lifetime description"
 msgstr "If user login while setting the system will not anwers request from the browser,Automatically Logout."
 
+msgid "%s minutes"
+msgstr ""
 
-msgid "AuthGeneral.use_ssl"
+msgid "%s hour"
+msgstr ""
+
+msgid "%s hours"
+msgstr ""
+
+msgid "%s day"
+msgstr ""
+
+msgid "%s days"
+msgstr ""
+
+msgid "Auth.use_ssl"
 msgstr "Use SSL for login?"
 
-msgid "AuthGeneral.use_ssl description"
+msgid "Auth.use_ssl description"
 msgstr "To effective this setting you have to set up SSL on the server first."
 
 
 msgid "Php.memory_limit"
 msgstr "Maximum number of memories"
 
+
+msgid "Proxy server"
+msgstr ""
 
 msgid "Proxy.use_proxy"
 msgstr "Use the proxy server"
@@ -102,6 +130,12 @@ msgstr "Please input the name which is indicated in the case of mail transmissio
 msgid "Mail.messageType"
 msgstr "Mail format"
 
+msgid "HTML"
+msgstr ""
+
+msgid "Plan text"
+msgstr ""
+
 msgid "Mail.transport"
 msgstr "Mail delivery method"
 
@@ -128,3 +162,27 @@ msgstr "SMTPAuth username"
 
 msgid "Mail.smtp.pass"
 msgstr "SMTPAuth password"
+
+#開発者向け
+msgid "debug"
+msgstr "Output debug"
+
+msgid "0: No error messages, errors, or warnings shown. Flash messages redirect."
+msgstr ""
+
+msgid "1: Errors and warnings shown, model caches refreshed, flash messages halted.<br>"
+msgstr ""
+
+msgid "2: As in 1, but also with full debug messages and SQL output."
+msgstr ""
+
+msgid "debug description"
+msgstr "0: No error messages, errors, or warnings shown. Flash messages redirect.<br>"
+"1: Errors and warnings shown, model caches refreshed, flash messages halted.<br>"
+"2: As in 1, but also with full debug messages and SQL output."
+
+msgid "Only for this session"
+msgstr ""
+
+msgid "Save the setting in the DB"
+msgstr ""

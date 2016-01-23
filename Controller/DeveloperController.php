@@ -9,7 +9,7 @@
  * @copyright Copyright 2014, NetCommons Project
  */
 
-App::uses('SiteManagerAppController', 'SiteManager.Controller');
+App::uses('SystemManagerAppController', 'SystemManager.Controller');
 
 /**
  * システム管理【開発者向け】
@@ -17,14 +17,16 @@ App::uses('SiteManagerAppController', 'SiteManager.Controller');
  * @author Shohei Nakajima <nakajimashouhei@gmail.com>
  * @package NetCommons\SystemManager\Controller
  */
-class DeveloperController extends SiteManagerAppController {
+class DeveloperController extends SystemManagerAppController {
 
 /**
  * use model
  *
  * @var array
  */
-	//public $uses = array();
+	public $uses = array(
+		'SiteManager.SiteSetting',
+	);
 
 /**
  * edit
@@ -32,5 +34,37 @@ class DeveloperController extends SiteManagerAppController {
  * @return void
  */
 	public function edit() {
+		//リクエストセット
+		if ($this->request->is('post')) {
+			//登録処理
+			if (! $this->request->data['SiteSetting']['only_session']) {
+				$this->Session->write('debug', null);
+				$this->SiteManager->saveData();
+			} else {
+				$this->SiteSetting->validateDeveloper($this->request->data);
+				if (! $this->SiteSetting->validationErrors) {
+						$this->Session->write('debug', (int)$this->request->data['SiteSetting']['debug']['0']['value']);
+						$this->NetCommons->setFlashNotification(__d('net_commons', 'Successfully saved.'), array(
+							'class' => 'success',
+						));
+						$this->redirect($this->referer());
+				} else {
+					$this->NetCommons->handleValidationError($this->SiteSetting->validationErrors);
+				}
+			}
+
+		} else {
+			$this->request->data['SiteSetting'] = $this->SiteSetting->getSiteSettingForEdit(
+				array('SiteSetting.key' => array(
+					// * デバッグ出力
+					'debug',
+				)
+			));
+			$onlySession = $this->Session->read('debug');
+			$this->request->data['SiteSetting']['only_session'] = isset($onlySession);
+			if ($this->request->data['SiteSetting']['only_session']) {
+				$this->request->data['SiteSetting']['debug']['0']['value'] = $onlySession;
+			}
+		}
 	}
 }

@@ -1,6 +1,6 @@
 <?php
 /**
- * 一般設定Element
+ * 一般設定 Element
  *
  * @author Noriko Arai <arai@nii.ac.jp>
  * @author Shohei Nakajima <nakajimashouhei@gmail.com>
@@ -9,25 +9,33 @@
  * @copyright Copyright 2014, NetCommons Project
  */
 
-App::uses('M17nHelper', 'M17n.View/Helper');
+App::uses('SiteSetting', 'SiteManager.Model');
+App::uses('CakeNumber', 'Utility');
+
+foreach (SiteSetting::$diskSpace as $size) {
+	if ($size < 0) {
+		$diskSpace[$size] = __d('system_manager', 'Unlimited');
+	} else {
+		$diskSpace[$size] = CakeNumber::toReadableSize($size);
+	}
+}
 ?>
 
 <article>
 	<?php echo $this->SystemManager->inputLanguage('SiteSetting', 'App.default_timezone', array(
 		'type' => 'select',
-		//'options' => array_map('__', array_intersect_key(M17nHelper::$languages, array_flip($languages))),
-		//'description' => true
+		'options' => SiteSetting::$defaultTimezones
 	)); ?>
 
 	<?php echo $this->SystemManager->inputCommon('SiteSetting', 'App.disk_for_group_room', array(
 		'type' => 'select',
-		//'options' => $rooms,
+		'options' => $diskSpace,
 		'description' => true
 	)); ?>
 
 	<?php echo $this->SystemManager->inputCommon('SiteSetting', 'App.disk_for_private_room', array(
 		'type' => 'select',
-		//'options' => $rooms,
+		'options' => $diskSpace,
 		'description' => true
 	)); ?>
 </article>

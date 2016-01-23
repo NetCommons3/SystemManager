@@ -9,7 +9,7 @@
  * @copyright Copyright 2014, NetCommons Project
  */
 
-App::uses('SiteManagerAppController', 'SiteManager.Controller');
+App::uses('SystemManagerAppController', 'SystemManager.Controller');
 
 /**
  * システム管理【サーバ設定】
@@ -17,14 +17,16 @@ App::uses('SiteManagerAppController', 'SiteManager.Controller');
  * @author Shohei Nakajima <nakajimashouhei@gmail.com>
  * @package NetCommons\SystemManager\Controller
  */
-class WebServerController extends SiteManagerAppController {
+class WebServerController extends SystemManagerAppController {
 
 /**
  * use model
  *
  * @var array
  */
-	//public $uses = array();
+	public $uses = array(
+		'SiteManager.SiteSetting',
+	);
 
 /**
  * edit
@@ -32,5 +34,34 @@ class WebServerController extends SiteManagerAppController {
  * @return void
  */
 	public function edit() {
+		//リクエストセット
+		if ($this->request->is('post')) {
+			//登録処理
+			$this->SiteManager->saveData();
+
+		} else {
+			$this->request->data['SiteSetting'] = $this->SiteSetting->getSiteSettingForEdit(
+				array('SiteSetting.key' => array(
+					// * システムコンフィグ
+					// ** PHP最大メモリ数
+					'Php.memory_limit',
+					// * セッション
+					// ** Cookieの名称
+					'Session.ini.session.name',
+
+					// * プロキシ
+					// ** プロキシサーバを使用する
+					'Proxy.use_proxy',
+					// ** プロキシホスト
+					'Proxy.host',
+					// ** プロキシポート番号
+					'Proxy.port',
+					// ** プロキシユーザ名
+					'Proxy.user',
+					// ** プロキシパスワード
+					'Proxy.pass',
+				)
+			));
+		}
 	}
 }

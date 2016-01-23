@@ -36,24 +36,20 @@ class SystemManagerController extends SystemManagerAppController {
 	public function edit() {
 		//リクエストセット
 		if ($this->request->is('post')) {
+			//登録処理
+			$this->SiteManager->saveData();
 
 		} else {
-			$settings = $this->SiteSetting->find('all', array(
-				'recursive' => -1,
-				'conditions' => array('key' => array(
-					//サイトタイムゾーン
+			$this->request->data['SiteSetting'] = $this->SiteSetting->getSiteSettingForEdit(
+				array('SiteSetting.key' => array(
+					// * サイトタイムゾーン
 					'App.default_timezone',
-					//グループルームの容量
+					// * グループルームの容量
 					'App.disk_for_group_room',
-					//プライベートルームの容量
+					// * プライベートルームの容量
 					'App.disk_for_private_room',
-				))
+				)
 			));
-			$this->request->data['SiteSetting'] = Hash::combine($settings,
-				'{n}.SiteSetting.language_id',
-				'{n}.SiteSetting',
-				'{n}.SiteSetting.key'
-			);
 		}
 	}
 }

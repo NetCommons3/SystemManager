@@ -12,29 +12,26 @@
 
 <?php echo $this->SystemManager->tabs(); ?>
 
-<?php echo $this->NetCommonsForm->create('SiteSetting'); ?>
-
-	<?php echo $this->SwitchLanguage->tablist('system-settings-'); ?>
-	<br>
+<?php echo $this->NetCommonsForm->create('SiteSetting', array(
+		'ng-controller' => 'SystemManager',
+	)); ?>
 
 	<div class="panel panel-default">
-		<div class="panel-heading">
-			<?php echo __d('site_manager', 'General settings'); ?>
-		</div>
-
 		<div class="panel-body">
+			<?php echo $this->SwitchLanguage->tablist('system-settings-'); ?>
+			<br>
+
 			<?php echo $this->element('SystemManager/general_form'); ?>
 		</div>
+
+		<div class="panel-footer text-center">
+			<?php echo $this->Button->cancelAndSave(
+					__d('net_commons', 'Cancel'),
+					__d('net_commons', 'OK'),
+					$this->NetCommonsHtml->url(array('action' => 'edit'))
+				); ?>
+		</div>
 	</div>
 
-	<hr>
-
-	<div class="text-center">
-		<?php echo $this->Button->cancelAndSave(
-				__d('net_commons', 'Cancel'),
-				__d('net_commons', 'OK'),
-				$this->NetCommonsHtml->url(array('action' => 'edit'))
-			); ?>
-	</div>
 
 <?php echo $this->NetCommonsForm->end();

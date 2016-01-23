@@ -1,4 +1,3 @@
-# LANGUAGE translation of CakePHP Application
 # Copyright YEAR NAME <EMAIL@ADDRESS>
 #
 #, fuzzy
@@ -28,7 +27,7 @@ msgstr "ログイン・ログアウト"
 msgid "Tab.developer"
 msgstr "開発者向け"
 
-
+#一般設定
 msgid "App.default_timezone"
 msgstr "デフォルトのタイムゾーン"
 
@@ -44,6 +43,16 @@ msgstr "プライベートルームの容量"
 msgid "App.disk_for_private_room description"
 msgstr "各プライベートルームにアップロードできるファイルの総量を指定します。"
 
+msgid "Unlimited"
+msgstr "無制限"
+
+
+# ログイン・ログアウト
+msgid "Auth common setting"
+msgstr "共通設定"
+
+msgid "%s setting"
+msgstr "%s 設定"
 
 msgid "Session.ini.session.cookie_lifetime"
 msgstr "自動ログアウトするまでの時間"
@@ -51,16 +60,42 @@ msgstr "自動ログアウトするまでの時間"
 msgid "Session.ini.session.cookie_lifetime description"
 msgstr "ログインした後、ここで設定した時間の間にブラウザから要求がないと自動的にログアウトします。"
 
-msgid "AuthGeneral.use_ssl"
+msgid "%s minutes"
+msgstr "%s分"
+
+msgid "%s hour"
+msgstr "%s時間"
+
+msgid "%s hours"
+msgstr "%s時間"
+
+msgid "%s day"
+msgstr "%s日"
+
+msgid "%s days"
+msgstr "%s日"
+
+msgid "Auth.use_ssl"
 msgstr "SSLを有効にする"
 
-msgid "AuthGeneral.use_ssl description"
+msgid "Auth.use_ssl description"
 msgstr "サーバ上でSSLの設定を行わないと上記の設定は有効になりません。共有SSLでは、動作しない場合があります。"
 
 
+#サーバ設定
 msgid "Php.memory_limit"
 msgstr "PHP最大メモリ数"
 
+msgid "Session.ini.session.name"
+msgstr "Cookieの名称"
+
+
+#プロキシ
+msgid "Proxy server"
+msgstr "プロキシサーバ"
+
+msgid "Proxy.use_proxy"
+msgstr "プロキシサーバを使用する"
 
 msgid "Proxy.use_proxy"
 msgstr "プロキシサーバを使用する"
@@ -90,6 +125,7 @@ msgid "Proxy.pass description"
 msgstr "プロキシが認証を必要とする場合、そのパスワードを入力します。必要がなければ空欄のままにします。"
 
 
+#メール設定
 msgid "Mail.from"
 msgstr "送信者メールアドレス"
 
@@ -101,6 +137,12 @@ msgstr "メール送信の際に送信者として表示される名前を入力
 
 msgid "Mail.messageType"
 msgstr "メール形式"
+
+msgid "HTML"
+msgstr ""
+
+msgid "Plan text"
+msgstr "プレーンテキスト"
 
 msgid "Mail.transport"
 msgstr "メール送信方法"
@@ -115,7 +157,7 @@ msgid "Mail.smtp.host"
 msgstr "SMTPサーバアドレス"
 
 msgid "Mail.smtp.host description"
-msgstr "SMTPサーバのホスト名、またはIPアドレスの一覧を記入してください。ホスト名、IPアドレスの後に「:」区切りでポート番号も指定可能です。"
+msgstr "SMTPサーバのホスト名、またはIPアドレスの一覧を記入してください。"
 
 msgid "Mail.smtp.port"
 msgstr "SMTPポート番号"
@@ -128,3 +170,28 @@ msgstr "SMTPAuthユーザ名"
 
 msgid "Mail.smtp.pass"
 msgstr "SMTPAuthパスワード"
+
+
+#開発者向け
+msgid "debug"
+msgstr "デバッグ出力"
+
+msgid "0: No error messages, errors, or warnings shown. Flash messages redirect."
+msgstr "0: エラー・メッセージ、エラー、警告は表示されません。フラッシュメッセージがリダイレクトされます。"
+
+msgid "1: Errors and warnings shown, model caches refreshed, flash messages halted."
+msgstr "1: エラーと警告が表示され、モデルのキャッシュがリフレッシュ、フラッシュメッセージが停止します。"
+
+msgid "2: As in 1, but also with full debug messages and SQL output."
+msgstr "2: 1だけでなく、完全なデバッグメッセージやSQLも出力します。"
+
+msgid "debug description"
+msgstr "0: エラー・メッセージ、エラー、警告は表示されません。フラッシュメッセージがリダイレクトされます。<br>"
+"1: エラーと警告が表示され、モデルのキャッシュがリフレッシュ、フラッシュメッセージが停止します。<br>"
+"2: 1だけでなく、完全なデバッグメッセージやSQLも出力します。"
+
+msgid "Only for this session"
+msgstr "このセッションのみ反映する"
+
+msgid "Save the setting in the DB"
+msgstr "設定をデータベースに保存する"

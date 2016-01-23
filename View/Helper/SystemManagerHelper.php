@@ -81,6 +81,9 @@ class SystemManagerHelper extends AppHelper {
 		$this->NetCommonsHtml->css(array(
 			'/site_manager/css/style.css', '/data_types/css/style.css'
 		));
+		$this->NetCommonsHtml->script(array(
+			'/system_manager/js/system_manager.js'
+		));
 		parent::beforeRender($viewFile);
 	}
 
@@ -132,6 +135,36 @@ class SystemManagerHelper extends AppHelper {
  */
 	public function inputLanguage($model, $key, $options = array(), $labelPlugin = 'system_manager') {
 		return $this->SiteManager->inputLanguage($model, $key, $options, $labelPlugin);
+	}
+
+/**
+ * Authタブの出力
+ *
+ * @return string HTML
+ */
+	public function authTabs() {
+		$output = '';
+
+		$output .= '<ul class="nav nav-pills" role="tablist">';
+		$active = Hash::get($this->_View->viewVars, 'activeAuthTab');
+		foreach ($this->_View->viewVars['authTabs'] as $key => $tab) {
+			if ($key === $active) {
+				$output .= '<li class="active">';
+			} else {
+				$output .= '<li>';
+			}
+
+			$output .= '<a href="#' . $key . '" aria-controls="' . $key . '" role="tab" data-toggle="tab" ' .
+							'ng-click="' . $this->domId('activeAuthTab') . ' = \'' . $key . '\'">';
+			$output .= $tab['label'];
+			$output .= '</a>';
+			$output .= '</li>';
+		}
+
+		$output .= '</ul>';
+		$output .= '<br>';
+
+		return $output;
 	}
 
 }
