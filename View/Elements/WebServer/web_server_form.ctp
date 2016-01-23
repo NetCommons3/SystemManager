@@ -10,12 +10,14 @@
  */
 
 App::uses('SiteSetting', 'SiteManager.Model');
+$SiteSetting = new SiteSetting();
+$SiteSettin->prepare();
 ?>
 
 <article>
 	<?php echo $this->SystemManager->inputCommon('SiteSetting', 'Php.memory_limit', array(
 		'type' => 'select',
-		'options' => SiteSetting::$memoryLimit,
+		'options' => $SiteSetting->memoryLimit,
 	)); ?>
 
 	<?php echo $this->SystemManager->inputCommon('SiteSetting', 'Session.ini.session.name'); ?>

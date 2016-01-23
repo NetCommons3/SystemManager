@@ -10,11 +10,13 @@
  */
 
 App::uses('SiteSetting', 'SiteManager.Model');
+$SiteSetting = new SiteSetting();
+$SiteSettin->prepare();
 ?>
 
 <article>
 	<?php echo $this->SystemManager->inputCommon('SiteSetting', 'Session.ini.session.cookie_lifetime', array(
-		'options' => SiteSetting::$sessionTimeout,
+		'options' => $SiteSetting->sessionTimeout,
 		'description' => true
 	)); ?>
 

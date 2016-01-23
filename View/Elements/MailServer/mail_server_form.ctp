@@ -10,6 +10,8 @@
  */
 
 App::uses('SiteSetting', 'SiteManager.Model');
+$SiteSetting = new SiteSetting();
+$SiteSettin->prepare();
 ?>
 
 <article>
@@ -23,14 +25,14 @@ App::uses('SiteSetting', 'SiteManager.Model');
 
 	<?php echo $this->SystemManager->inputCommon('SiteSetting', 'Mail.messageType', array(
 			'type' => 'radio',
-			'options' => SiteSetting::$mailMessageType,
+			'options' => $SiteSetting->mailMessageType,
 		)); ?>
 
 	<?php $transportDomId = $this->SystemManager->domId('SiteSetting.Mail.transport'); ?>
 	<div ng-init="<?php echo $transportDomId . ' = \'' . h($this->SystemManager->getValue('SiteSetting', 'Mail.transport') . '\''); ?>">
 		<?php echo $this->SystemManager->inputCommon('SiteSetting', 'Mail.transport', array(
 			'type' => 'select',
-			'options' => SiteSetting::$mailTransport,
+			'options' => $SiteSetting->mailTransport,
 			'ng-model' => $transportDomId,
 			'description' => true,
 		)); ?>

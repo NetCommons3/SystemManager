@@ -12,7 +12,10 @@
 App::uses('SiteSetting', 'SiteManager.Model');
 App::uses('CakeNumber', 'Utility');
 
-foreach (SiteSetting::$diskSpace as $size) {
+$SiteSetting = new SiteSetting();
+$SiteSettin->prepare();
+
+foreach ($SiteSetting->diskSpace as $size) {
 	if ($size < 0) {
 		$diskSpace[$size] = __d('system_manager', 'Unlimited');
 	} else {
@@ -24,7 +27,7 @@ foreach (SiteSetting::$diskSpace as $size) {
 <article>
 	<?php echo $this->SystemManager->inputLanguage('SiteSetting', 'App.default_timezone', array(
 		'type' => 'select',
-		'options' => SiteSetting::$defaultTimezones
+		'options' => $SiteSetting->defaultTimezones
 	)); ?>
 
 	<?php echo $this->SystemManager->inputCommon('SiteSetting', 'App.disk_for_group_room', array(
