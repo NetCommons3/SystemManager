@@ -10,6 +10,8 @@
  */
 
 App::uses('SiteSetting', 'SiteManager.Model');
+$SiteSetting = new SiteSetting();
+$SiteSettin->prepare();
 ?>
 
 <article>
@@ -28,7 +30,7 @@ App::uses('SiteSetting', 'SiteManager.Model');
 
 	<?php echo $this->SystemManager->inputCommon('SiteSetting', 'debug', array(
 		'type' => 'select',
-		'options' => SiteSetting::$debugOptions,
+		'options' => $SiteSetting->debugOptions,
 		'description' => true,
 	)); ?>
 </article>
