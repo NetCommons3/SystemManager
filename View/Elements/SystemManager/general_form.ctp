@@ -13,7 +13,7 @@ App::uses('SiteSetting', 'SiteManager.Model');
 App::uses('CakeNumber', 'Utility');
 
 $SiteSetting = new SiteSetting();
-$SiteSettin->prepare();
+$SiteSetting->prepare();
 
 foreach ($SiteSetting->diskSpace as $size) {
 	if ($size < 0) {
