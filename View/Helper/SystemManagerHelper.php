@@ -106,7 +106,6 @@ class SystemManagerHelper extends AppHelper {
 			$output .= '</li>';
 		}
 		$output .= '</ul>';
-		$output .= '<br>';
 
 		return $output;
 	}
@@ -162,7 +161,6 @@ class SystemManagerHelper extends AppHelper {
 		}
 
 		$output .= '</ul>';
-		$output .= '<br>';
 
 		return $output;
 	}
