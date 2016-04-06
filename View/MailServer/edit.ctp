@@ -19,7 +19,6 @@
 	<div class="panel panel-default">
 		<div class="panel-body">
 			<?php echo $this->SwitchLanguage->tablist('system-settings-'); ?>
-			<br>
 
 			<?php echo $this->element('MailServer/mail_server_form'); ?>
 		</div>
