@@ -19,7 +19,6 @@
 	<div class="panel panel-default">
 		<div class="panel-body">
 			<?php echo $this->element('WebServer/web_server_form'); ?>
-			<br>
 
 			<div class="panel panel-default">
 				<div class="panel-heading">
