@@ -31,6 +31,6 @@ $SiteSetting->prepare();
 	<?php echo $this->SystemManager->inputCommon('SiteSetting', 'debug', array(
 		'type' => 'select',
 		'options' => $SiteSetting->debugOptions,
-		'description' => true,
+		'help' => true,
 	)); ?>
 </article>

@@ -17,7 +17,7 @@ $SiteSetting->prepare();
 <article>
 	<?php echo $this->SystemManager->inputCommon('SiteSetting', 'Session.ini.session.cookie_lifetime', array(
 		'options' => $SiteSetting->sessionTimeout,
-		'description' => true
+		'help' => true
 	)); ?>
 
 	<?php echo $this->SystemManager->inputHidden('SiteSetting', 'Session.ini.session.gc_maxlifetime', '0'); ?>
@@ -28,7 +28,7 @@ $SiteSetting->prepare();
 			'1' => __d('net_commons', 'Yes'),
 			'0' => __d('net_commons', 'No'),
 		),
-		'description' => true
+		'help' => true
 	)); ?>
 
 </article>

@@ -34,13 +34,13 @@ msgstr "デフォルトのタイムゾーン"
 msgid "App.disk_for_group_room"
 msgstr "グループルームの容量"
 
-msgid "App.disk_for_group_room description"
+msgid "App.disk_for_group_room help"
 msgstr "各グループルームにアップロードできるファイルの総量を指定します。"
 
 msgid "App.disk_for_private_room"
 msgstr "プライベートルームの容量"
 
-msgid "App.disk_for_private_room description"
+msgid "App.disk_for_private_room help"
 msgstr "各プライベートルームにアップロードできるファイルの総量を指定します。"
 
 msgid "Unlimited"
@@ -57,7 +57,7 @@ msgstr "%s 設定"
 msgid "Session.ini.session.cookie_lifetime"
 msgstr "自動ログアウトするまでの時間"
 
-msgid "Session.ini.session.cookie_lifetime description"
+msgid "Session.ini.session.cookie_lifetime help"
 msgstr "ログインした後、ここで設定した時間の間にブラウザから要求がないと自動的にログアウトします。"
 
 msgid "%s minutes"
@@ -78,7 +78,7 @@ msgstr "%s日"
 msgid "Auth.use_ssl"
 msgstr "SSLを有効にする"
 
-msgid "Auth.use_ssl description"
+msgid "Auth.use_ssl help"
 msgstr "サーバ上でSSLの設定を行わないと上記の設定は有効になりません。共有SSLでは、動作しない場合があります。"
 
 
@@ -103,25 +103,25 @@ msgstr "プロキシサーバを使用する"
 msgid "Proxy.host"
 msgstr "プロキシホスト"
 
-msgid "Proxy.host description"
+msgid "Proxy.host help"
 msgstr "プロキシ経由でRSS/ATOMを取得する場合、ここにそのホスト名またはIPを記述します。"
 
 msgid "Proxy.port"
 msgstr "プロキシポート番号"
 
-msgid "Proxy.port description"
+msgid "Proxy.port help"
 msgstr "プロキシを経由する場合、そのポート番号(デフォルト:8080)を数字で入力します。"
 
 msgid "Proxy.user"
 msgstr "プロキシユーザ名"
 
-msgid "Proxy.user description"
+msgid "Proxy.user help"
 msgstr "プロキシが認証を必要とする場合、そのユーザ名を入力します。必要がなければ空欄のままにします。"
 
 msgid "Proxy.pass"
 msgstr "プロキシパスワード"
 
-msgid "Proxy.pass description"
+msgid "Proxy.pass help"
 msgstr "プロキシが認証を必要とする場合、そのパスワードを入力します。必要がなければ空欄のままにします。"
 
 
@@ -132,7 +132,7 @@ msgstr "送信者メールアドレス"
 msgid "Mail.from_name"
 msgstr "送信者"
 
-msgid "Mail.from_name description"
+msgid "Mail.from_name help"
 msgstr "メール送信の際に送信者として表示される名前を入力してください。"
 
 msgid "Mail.messageType"
@@ -147,7 +147,7 @@ msgstr "プレーンテキスト"
 msgid "Mail.transport"
 msgstr "メール送信方法"
 
-msgid "Mail.transport description"
+msgid "Mail.transport help"
 msgstr "メールを送信する方法を選択してください。デフォルトではSMTPサーバを使用します。"
 
 msgid "Mail.sendmail"
@@ -156,13 +156,13 @@ msgstr "sendmailへのパス"
 msgid "Mail.smtp.host"
 msgstr "SMTPサーバアドレス"
 
-msgid "Mail.smtp.host description"
+msgid "Mail.smtp.host help"
 msgstr "SMTPサーバのホスト名、またはIPアドレスの一覧を記入してください。"
 
 msgid "Mail.smtp.port"
 msgstr "SMTPポート番号"
 
-msgid "Mail.smtp.port description"
+msgid "Mail.smtp.port help"
 msgstr "ポート番号を入力してください。"
 
 msgid "Mail.smtp.user"
@@ -185,7 +185,7 @@ msgstr "1: エラーと警告が表示され、モデルのキャッシュがリ
 msgid "2: As in 1, but also with full debug messages and SQL output."
 msgstr "2: 1だけでなく、完全なデバッグメッセージやSQLも出力します。"
 
-msgid "debug description"
+msgid "debug help"
 msgstr "0: エラー・メッセージ、エラー、警告は表示されません。フラッシュメッセージがリダイレクトされます。<br>"
 "1: エラーと警告が表示され、モデルのキャッシュがリフレッシュ、フラッシュメッセージが停止します。<br>"
 "2: 1だけでなく、完全なデバッグメッセージやSQLも出力します。"

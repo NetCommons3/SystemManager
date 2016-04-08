@@ -20,7 +20,7 @@ $SiteSetting->prepare();
 	)); ?>
 
 	<?php echo $this->SystemManager->inputLanguage('SiteSetting', 'Mail.from_name', array(
-		'description' => true
+		'help' => true
 	)); ?>
 
 	<?php echo $this->SystemManager->inputCommon('SiteSetting', 'Mail.messageType', array(
@@ -34,20 +34,20 @@ $SiteSetting->prepare();
 			'type' => 'select',
 			'options' => $SiteSetting->mailTransport,
 			'ng-model' => $transportDomId,
-			'description' => true,
+			'help' => true,
 		)); ?>
 
 		<div ng-show="<?php echo $transportDomId . ' === \'' . SiteSetting::MAIL_TRANSPORT_SMTP . '\''; ?>">
 			<?php echo $this->SystemManager->inputCommon('SiteSetting', 'Mail.smtp.host', array(
 					'required' => true,
-					'description' => true,
+					'help' => true,
 				)); ?>
 		</div>
 
 		<div ng-show="<?php echo $transportDomId . ' === \'' . SiteSetting::MAIL_TRANSPORT_SMTP . '\''; ?>">
 			<?php echo $this->SystemManager->inputCommon('SiteSetting', 'Mail.smtp.port', array(
 					'required' => true,
-					'description' => true,
+					'help' => true,
 				)); ?>
 		</div>
 
