@@ -48,6 +48,10 @@ class SystemManagerHelper extends AppHelper {
 			'controller' => 'mail_server',
 			'action' => 'edit',
 		),
+		'security_settings' => array(
+			'controller' => 'security_settings',
+			'action' => 'edit',
+		),
 		'developer' => array(
 			'controller' => 'developer',
 			'action' => 'edit',

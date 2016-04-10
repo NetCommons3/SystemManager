@@ -25,8 +25,8 @@ msgstr "サーバ設定"
 msgid "Tab.mail_server"
 msgstr "メール設定"
 
-msgid "Tab.auth_settings"
-msgstr "ログイン・ログアウト"
+msgid "Tab.security_settings"
+msgstr "セキュリティ設定"
 
 msgid "Tab.developer"
 msgstr "開発者向け"
@@ -171,6 +171,39 @@ msgstr "SMTPAuth password"
 
 msgid "Mail.smtp.pass help"
 msgstr "SMTPAuthを使う場合、入力してください。"
+
+#
+# セキュリティ設定
+#
+msgid "Upload.allow_extension"
+msgstr "アップロードファイルを許可する拡張子"
+
+msgid "Upload.allow_extension help"
+msgstr "複数指定するときは、「,」区切りで入力してください。"
+
+msgid "Security.deny_ip_move"
+msgstr "IP変動を禁止する会員権限"
+
+msgid "Security.deny_ip_move help"
+msgstr "IP変動を禁止しない場合、セッションハイジャックされる可能性があります。"
+
+msgid "Security.enable_bad_ips"
+msgstr "IPアドレスでアクセスを拒否する"
+
+msgid "Security.bad_ips"
+msgstr "アクセスを拒否するIPアドレス"
+
+msgid "Security.bad_ips help"
+msgstr "「192.168.1.123」「192.168.1」形式で入力してください。複数指定する場合は、「|」区切りで入力してください。"
+
+msgid "Security.enable_allow_system_plugin_ips"
+msgstr "管理画面のアクセスをIPアドレスで制御する"
+
+msgid "Security.allow_system_plugin_ips"
+msgstr "アクセスを許可するIPアドレス"
+
+msgid "Security.allow_system_plugin_ips help"
+msgstr "「192.168.1.123」「192.168.1」形式で入力してください。複数指定する場合は、「|」区切りで入力してください。"
 
 #
 # 開発者向け
