@@ -53,12 +53,14 @@ $SiteSetting->prepare();
 
 		<div ng-show="<?php echo $transportDomId . ' === \'' . SiteSetting::MAIL_TRANSPORT_SMTP . '\''; ?>">
 			<?php echo $this->SystemManager->inputCommon('SiteSetting', 'Mail.smtp.user', array(
+					'help' => true,
 				)); ?>
 		</div>
 
 		<div ng-show="<?php echo $transportDomId . ' === \'' . SiteSetting::MAIL_TRANSPORT_SMTP . '\''; ?>">
 			<?php echo $this->SystemManager->inputCommon('SiteSetting', 'Mail.smtp.pass', array(
-					'type' => 'password'
+					'type' => 'password',
+					'help' => true,
 				)); ?>
 		</div>
 	</div>

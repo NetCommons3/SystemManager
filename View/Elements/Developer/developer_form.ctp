@@ -17,12 +17,12 @@ $SiteSetting->prepare();
 <article>
 	<?php echo $this->NetCommonsForm->radio('SiteSetting.only_session',
 			array(
-				1 => __d('system_manager', 'Only for this session'),
-				0 => __d('system_manager', 'Save the setting in the DB')
+				'1' => __d('system_manager', 'Only for this session'),
+				'0' => __d('system_manager', 'Save the setting in the DB')
 			),
 			array(
-				'div' => array('class' => 'form-control form-inline'),
-				'separator' => '<span class="radio-separator"></span>'
+				'div' => array('class' => 'form-group form-inline'),
+				'separator' => '<span class="radio-separator"></span>',
 			)
 		); ?>
 

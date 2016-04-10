@@ -21,4 +21,11 @@ $SiteSetting->prepare();
 	)); ?>
 
 	<?php echo $this->SystemManager->inputCommon('SiteSetting', 'Session.ini.session.name'); ?>
+
+	<?php echo $this->SystemManager->inputCommon('SiteSetting', 'Session.ini.session.cookie_lifetime', array(
+		'options' => $SiteSetting->sessionTimeout,
+		'help' => true
+	)); ?>
+
+	<?php echo $this->SystemManager->inputHidden('SiteSetting', 'Session.ini.session.gc_maxlifetime', '0'); ?>
 </article>

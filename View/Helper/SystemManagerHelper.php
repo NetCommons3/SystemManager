@@ -40,10 +40,6 @@ class SystemManagerHelper extends AppHelper {
 			'controller' => 'system_manager',
 			'action' => 'edit',
 		),
-		'auth_settings' => array(
-			'controller' => 'auth_settings',
-			'action' => 'edit',
-		),
 		'web_server' => array(
 			'controller' => 'web_server',
 			'action' => 'edit',

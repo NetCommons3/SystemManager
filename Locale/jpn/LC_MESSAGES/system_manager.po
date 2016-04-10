@@ -12,6 +12,9 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 
+#
+# タブ文言
+#
 msgid "Tab.system_manager"
 msgstr "一般設定"
 
@@ -27,7 +30,9 @@ msgstr "ログイン・ログアウト"
 msgid "Tab.developer"
 msgstr "開発者向け"
 
-#一般設定
+#
+# 一般設定
+#
 msgid "App.default_timezone"
 msgstr "デフォルトのタイムゾーン"
 
@@ -46,16 +51,20 @@ msgstr "各プライベートルームにアップロードできるファイル
 msgid "Unlimited"
 msgstr "無制限"
 
+#
+# サーバ設定
+#
+msgid "Php.memory_limit"
+msgstr "PHP最大メモリ数"
 
-# ログイン・ログアウト
-msgid "Auth common setting"
-msgstr "共通設定"
+msgid "Session.ini.session.name"
+msgstr "Cookieの名称"
 
-msgid "%s setting"
-msgstr "%s 設定"
-
+#
+# セッションタイムアウト
+#
 msgid "Session.ini.session.cookie_lifetime"
-msgstr "自動ログアウトするまでの時間"
+msgstr "セッションタイムアウト"
 
 msgid "Session.ini.session.cookie_lifetime help"
 msgstr "ログインした後、ここで設定した時間の間にブラウザから要求がないと自動的にログアウトします。"
@@ -75,22 +84,9 @@ msgstr "%s日"
 msgid "%s days"
 msgstr "%s日"
 
-msgid "Auth.use_ssl"
-msgstr "SSLを有効にする"
-
-msgid "Auth.use_ssl help"
-msgstr "サーバ上でSSLの設定を行わないと上記の設定は有効になりません。共有SSLでは、動作しない場合があります。"
-
-
-#サーバ設定
-msgid "Php.memory_limit"
-msgstr "PHP最大メモリ数"
-
-msgid "Session.ini.session.name"
-msgstr "Cookieの名称"
-
-
-#プロキシ
+#
+# プロキシ
+#
 msgid "Proxy server"
 msgstr "プロキシサーバ"
 
@@ -124,8 +120,9 @@ msgstr "プロキシパスワード"
 msgid "Proxy.pass help"
 msgstr "プロキシが認証を必要とする場合、そのパスワードを入力します。必要がなければ空欄のままにします。"
 
-
-#メール設定
+#
+# メール設定
+#
 msgid "Mail.from"
 msgstr "送信者メールアドレス"
 
@@ -168,11 +165,18 @@ msgstr "ポート番号を入力してください。"
 msgid "Mail.smtp.user"
 msgstr "SMTPAuthユーザ名"
 
+msgid "Mail.smtp.user help"
+msgstr "SMTPAuthを使う場合、入力してください。"
+
 msgid "Mail.smtp.pass"
 msgstr "SMTPAuthパスワード"
 
+msgid "Mail.smtp.pass help"
+msgstr "SMTPAuthを使う場合、入力してください。"
 
-#開発者向け
+#
+# 開発者向け
+#
 msgid "debug"
 msgstr "デバッグ出力"
 
