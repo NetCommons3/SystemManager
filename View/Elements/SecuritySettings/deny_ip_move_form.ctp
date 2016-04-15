@@ -13,7 +13,7 @@
 <article>
 	<?php echo $this->SystemManager->inputCommon('SiteSetting', 'Security.deny_ip_move', array(
 		'type' => 'select',
-		'childDiv' => array('class' => 'form-inline'),
+		'div' => array('class' => 'form-inline'),
 		'multiple' => 'checkbox',
 		'options' => $userRoles,
 		'value' => explode('|', $this->SystemManager->getValue('SiteSetting', 'Security.deny_ip_move')),
