@@ -21,8 +21,7 @@ $SiteSetting->prepare();
 				'0' => __d('system_manager', 'Save the setting in the DB')
 			),
 			array(
-				'div' => array('class' => 'form-group form-inline'),
-				'separator' => '<span class="radio-separator"></span>',
+				'div' => array('class' => 'form-inline'),
 			)
 		); ?>
 
