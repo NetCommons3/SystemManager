@@ -33,12 +33,12 @@ foreach ($SiteSetting->diskSpace as $size) {
 	<?php echo $this->SystemManager->inputCommon('SiteSetting', 'App.disk_for_group_room', array(
 		'type' => 'select',
 		'options' => $diskSpace,
-		'description' => true
+		'help' => true
 	)); ?>
 
 	<?php echo $this->SystemManager->inputCommon('SiteSetting', 'App.disk_for_private_room', array(
 		'type' => 'select',
 		'options' => $diskSpace,
-		'description' => true
+		'help' => true
 	)); ?>
 </article>

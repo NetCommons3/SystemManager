@@ -1,6 +1,6 @@
 <?php
 /**
- * システム管理【ログイン・ログアウト】テンプレート
+ * システム管理【セキュリティ設定】テンプレート
  *
  * @author Noriko Arai <arai@nii.ac.jp>
  * @author Shohei Nakajima <nakajimashouhei@gmail.com>
@@ -14,29 +14,33 @@
 
 <?php echo $this->NetCommonsForm->create('SiteSetting', array(
 		'ng-controller' => 'SystemManager',
-		'ng-init' => $this->SystemManager->domId('activeAuthTab') . ' = \'' . h($activeAuthTab) . '\''
 	)); ?>
-
-	<?php $this->NetCommonsForm->unlockField('activeAuthTab'); ?>
-	<?php echo $this->NetCommonsForm->hidden('activeAuthTab', array(
-		'ng-value' => $this->SystemManager->domId('activeAuthTab')
-	)); ?>
-
-	<div>
-	<?php echo $this->SystemManager->authTabs(); ?>
 
 	<div class="panel panel-default">
 		<div class="panel-body">
-			<div class="tab-content">
-				<?php foreach ($authTabs as $key => $tab) : ?>
-					<div id="<?php echo $key; ?>"
-							class="tab-pane<?php echo ($activeAuthTab === $key ? ' active' : ''); ?>" >
-
-						<?php echo $this->element($tab['element']); ?>
-					</div>
-				<?php endforeach; ?>
+			<div class="panel panel-default">
+				<div class="panel-body">
+					<?php echo $this->element('SecuritySettings/upload_allow_extension_form'); ?>
+				</div>
 			</div>
 
+			<div class="panel panel-default">
+				<div class="panel-body">
+					<?php echo $this->element('SecuritySettings/deny_ip_move_form'); ?>
+				</div>
+			</div>
+
+			<div class="panel panel-default">
+				<div class="panel-body">
+					<?php echo $this->element('SecuritySettings/bad_ips_form'); ?>
+				</div>
+			</div>
+
+			<div class="panel panel-default">
+				<div class="panel-body">
+					<?php echo $this->element('SecuritySettings/allow_system_plugin_ips_form'); ?>
+				</div>
+			</div>
 		</div>
 
 		<div class="panel-footer text-center">
@@ -47,5 +51,6 @@
 				); ?>
 		</div>
 	</div>
+
 
 <?php echo $this->NetCommonsForm->end();

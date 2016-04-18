@@ -25,29 +25,29 @@
 
 		<div ng-show="<?php echo $domId; ?>">
 			<?php echo $this->SystemManager->inputCommon('SiteSetting', 'Proxy.host', array(
-					'description' => true,
+					'help' => true,
 					'required' => true,
 				)); ?>
 		</div>
 
 		<div ng-show="<?php echo $domId; ?>">
 			<?php echo $this->SystemManager->inputCommon('SiteSetting', 'Proxy.port', array(
-					'description' => true,
+					'help' => true,
 					'required' => true,
 				)); ?>
 		</div>
 
 		<div ng-show="<?php echo $domId; ?>">
 			<?php echo $this->SystemManager->inputCommon('SiteSetting', 'Proxy.user', array(
-					'description' => true,
+					'help' => true,
 				)); ?>
 		</div>
 
 		<div ng-show="<?php echo $domId; ?>">
 			<?php echo $this->SystemManager->inputCommon('SiteSetting', 'Proxy.pass', array(
 					'type' => 'password',
-					'description' => true,
+					'help' => true,
 				)); ?>
 		</div>
-
+	</div>
 </article>
