@@ -9,6 +9,10 @@
  * @copyright Copyright 2014, NetCommons Project
  */
 
+$this->NetCommonsHtml->css(array(
+	'/system_manager/css/style.css'
+));
+
 App::uses('SiteSetting', 'SiteManager.Model');
 $SiteSetting = new SiteSetting();
 $SiteSetting->prepare();
@@ -22,7 +26,7 @@ $SiteSetting->prepare();
 					'0' => __d('system_manager', 'Save the setting in the DB')
 				),
 				array(
-					'div' => array('class' => 'form-inline'),
+					'div' => array('class' => 'form-inline system-manager-developer'),
 				)
 			); ?>
 	</div>
