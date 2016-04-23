@@ -8,7 +8,9 @@ php:
 sudo: required
 
 env:
-  - NETCOMMONS_VERSION=master DB=mysql
+  global:
+    - NETCOMMONS_VERSION=master DB=mysql
+    - secure: "PFTtZ+Bs63b++QNvbwjeD/zBzqjW29S9EEKYDIZEXL67RaFQTxARzZL4rQ4dc4fOvDO43cExZgNoJnB9UA9cBy1P/aI9bBlcVZndFdAOWk/wnwnew9ZchBYpzdLIAzdDEhCTM11djcq5ZYylV94aSyKwcm7bRVZGLvO6ZkPfqo0="
 
 before_script:
   - export NETCOMMONS_BUILD_DIR=`dirname $TRAVIS_BUILD_DIR`/NetCommons3

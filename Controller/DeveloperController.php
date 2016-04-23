@@ -43,7 +43,9 @@ class DeveloperController extends SystemManagerAppController {
 			} else {
 				$this->SiteSetting->validateDeveloper($this->request->data);
 				if (! $this->SiteSetting->validationErrors) {
-						$this->Session->write('debug', (int)$this->request->data['SiteSetting']['debug']['0']['value']);
+						$this->Session->write(
+							'debug', (int)$this->request->data['SiteSetting']['debug']['0']['value']
+						);
 						$this->NetCommons->setFlashNotification(__d('net_commons', 'Successfully saved.'), array(
 							'class' => 'success',
 						));
