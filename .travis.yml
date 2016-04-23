@@ -8,8 +8,10 @@ php:
 sudo: required
 
 env:
+  - NETCOMMONS_VERSION=master DB=mysql
+
+env:
   global:
-    - NETCOMMONS_VERSION=master DB=mysql
     - GIT_COMMITTER_NAME=s-nakajima
     - GIT_COMMITTER_EMAIL=nakajimashouhei@gmail.com
     - GIT_AUTHOR_NAME=s-nakajima
