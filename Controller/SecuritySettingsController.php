@@ -49,8 +49,9 @@ class SecuritySettingsController extends SystemManagerAppController {
 		//リクエストセット
 		if ($this->request->is('post')) {
 			$data = $this->request->data['SiteSetting'];
-			if (is_array($data['Security.deny_ip_move']['0']['value'])) {
-				$data['Security.deny_ip_move']['0']['value'] = implode('|', $data['Security.deny_ip_move']['0']['value']);
+			$value = $data['Security.deny_ip_move']['0']['value'];
+			if (is_array($value)) {
+				$data['Security.deny_ip_move']['0']['value'] = implode('|', $value);
 			}
 
 			//登録処理
@@ -78,7 +79,8 @@ class SecuritySettingsController extends SystemManagerAppController {
 
 			$ips = $this->request->data['SiteSetting']['Security.allow_system_plugin_ips']['0']['value'];
 			if (! $this->SiteSetting->hasCurrentIp($ips)) {
-				$this->request->data['SiteSetting']['Security.allow_system_plugin_ips']['0']['value'] = Hash::get($_SERVER, 'REMOTE_ADDR');
+				$ips = Hash::get($_SERVER, 'REMOTE_ADDR');
+				$this->request->data['SiteSetting']['Security.allow_system_plugin_ips']['0']['value'] = $ips;
 			}
 		}
 	}
