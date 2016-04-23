@@ -8,13 +8,12 @@ php:
 sudo: required
 
 env:
-  global:
-    - NETCOMMONS_VERSION=master DB=mysql
-    - GIT_COMMITTER_NAME=s-nakajima
-    - GIT_COMMITTER_EMAIL=nakajimashouhei@gmail.com
-    - GIT_AUTHOR_NAME=s-nakajima
-    - GIT_AUTHOR_EMAIL=nakajimashouhei@gmail.com
-    - secure: "F+4dOte7ovSk4OJptAJ9TO4eyxMY05Sb4jnhLep0/83zSPHh6yEVJUOIhZaGmdP1wWHL4LG812C8+MH4TXLJSAb6H9urX/nW6Qo4o2Jjy2ndHvM9cWSLBaqQcIwqkr7d4Alk7vAolCEULymRMgZTQdpTEeuMjF++7nqmToXVpfaqWGysV4PuQHjJmMy+kcsCYs+kykkp5HkAswkOk2g/vtMSCznBsoAkjI+tvAVz8AjXdceYue09QvzWOjAoa7O3C1YvedYdGYSIx5X/pa5c0iJYsfOW5VkMbvErfcJ5aU+iZrzOLNvL926VsMFmmG9fu4BuatzNYWkqP1iq+U9GewJ3VJOD4mpMqIt/9eBT3/ry/8wxm/H4GXyne1u8Hvob9mjsnNrZ41gzGy6zJz8POqJXBgvRv9++pqD3ck6Ijw9xoprtXXsTaMpVDjyFSnwZd+p+HF0lPqgbwAo+qJ9F0khNCJ+ptYYQWt8LiMxwkDG/k0PIN09i0ivL198gqICuJjfTZIwYS0Jn1OfWnkK/EcG0CzQR1vZkskRHgR/FgqLj0iSqACTyMCeV72sbhRgt2LgMcHrVhSMH4JFZyQmWYasKplaFhpsu6ZhJ0ArYC542NIj5hmv7u1qECwCRYrKYPsihtDLxMsQY9vlE55ekmOEZ0kdT9ZBqxXMZKNZgMoU="
+  - NETCOMMONS_VERSION=master DB=mysql
+  - GIT_COMMITTER_NAME=s-nakajima
+  - GIT_COMMITTER_EMAIL=nakajimashouhei@gmail.com
+  - GIT_AUTHOR_NAME=s-nakajima
+  - GIT_AUTHOR_EMAIL=nakajimashouhei@gmail.com
+  - secure: "F+4dOte7ovSk4OJptAJ9TO4eyxMY05Sb4jnhLep0/83zSPHh6yEVJUOIhZaGmdP1wWHL4LG812C8+MH4TXLJSAb6H9urX/nW6Qo4o2Jjy2ndHvM9cWSLBaqQcIwqkr7d4Alk7vAolCEULymRMgZTQdpTEeuMjF++7nqmToXVpfaqWGysV4PuQHjJmMy+kcsCYs+kykkp5HkAswkOk2g/vtMSCznBsoAkjI+tvAVz8AjXdceYue09QvzWOjAoa7O3C1YvedYdGYSIx5X/pa5c0iJYsfOW5VkMbvErfcJ5aU+iZrzOLNvL926VsMFmmG9fu4BuatzNYWkqP1iq+U9GewJ3VJOD4mpMqIt/9eBT3/ry/8wxm/H4GXyne1u8Hvob9mjsnNrZ41gzGy6zJz8POqJXBgvRv9++pqD3ck6Ijw9xoprtXXsTaMpVDjyFSnwZd+p+HF0lPqgbwAo+qJ9F0khNCJ+ptYYQWt8LiMxwkDG/k0PIN09i0ivL198gqICuJjfTZIwYS0Jn1OfWnkK/EcG0CzQR1vZkskRHgR/FgqLj0iSqACTyMCeV72sbhRgt2LgMcHrVhSMH4JFZyQmWYasKplaFhpsu6ZhJ0ArYC542NIj5hmv7u1qECwCRYrKYPsihtDLxMsQY9vlE55ekmOEZ0kdT9ZBqxXMZKNZgMoU="
 
 before_script:
   - export NETCOMMONS_BUILD_DIR=`dirname $TRAVIS_BUILD_DIR`/NetCommons3
