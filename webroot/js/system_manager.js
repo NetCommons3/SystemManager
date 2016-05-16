@@ -8,9 +8,9 @@
  * SystemManager Javascript
  *
  * @param {string} Controller name
- * @param {function($scope)} Controller
+ * @param {function($scope, $window)} Controller
  */
-NetCommonsApp.controller('SystemManager', function($scope) {
+NetCommonsApp.controller('SystemManager', ['$scope', '$window', function($scope, $window) {
 
   /**
    * Radio click
@@ -30,4 +30,13 @@ NetCommonsApp.controller('SystemManager', function($scope) {
     $scope[domId] = $event.target.value;
   };
 
-});
+  /**
+   * キャンセル
+   *
+   * @return {void}
+   */
+  $scope.cancel = function() {
+    $window.location.reload();
+  };
+
+}]);
