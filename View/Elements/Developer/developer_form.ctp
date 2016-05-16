@@ -24,9 +24,6 @@ $SiteSetting->prepare();
 				array(
 					'1' => __d('system_manager', 'Only for this session'),
 					'0' => __d('system_manager', 'Save the setting in the DB')
-				),
-				array(
-					'div' => array('class' => 'form-inline system-manager-developer'),
 				)
 			); ?>
 	</div>
