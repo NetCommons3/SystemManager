@@ -52,23 +52,22 @@ class SystemManagerController extends SystemManagerAppController {
 				'recursive' => -1,
 				'conditions' => array('id' => [Space::PRIVATE_SPACE_ID, Space::ROOM_SPACE_ID]),
 			));
-			// * グループルームの容量
-			$this->request->data['SiteSetting']['App.disk_for_group_room']['0'] = $this->SiteSetting->create(
-				array(
-					'key' => 'App.disk_for_group_room',
-					'language_id' => '0',
-					'value' => Hash::extract($spaces, '{n}.Space[type=' . Space::ROOM_SPACE_ID . '].room_disk_size')[0]
-				)
-			)['SiteSetting'];
 
-			// * プライベートルームの容量
-			$this->request->data['SiteSetting']['App.disk_for_private_room']['0'] = $this->SiteSetting->create(
-				array(
-					'key' => 'App.disk_for_private_room',
-					'language_id' => '0',
-					'value' => Hash::extract($spaces, '{n}.Space[type=' . Space::PRIVATE_SPACE_ID . '].room_disk_size')[0]
-				)
-			)['SiteSetting'];
+			$setSpaceDisk = array(
+				// * グループルームの容量
+				Space::ROOM_SPACE_ID => 'App.disk_for_group_room',
+				// * プライベートルームの容量
+				Space::PRIVATE_SPACE_ID => 'App.disk_for_private_room',
+			);
+			foreach ($setSpaceDisk as $spaceId => $key) {
+				$this->request->data['SiteSetting'][$key]['0'] = $this->SiteSetting->create(
+					array(
+						'key' => $key,
+						'language_id' => '0',
+						'value' => Hash::extract($spaces, '{n}.Space[id=' . $spaceId . '].room_disk_size')[0]
+					)
+				)['SiteSetting'];
+			}
 		}
 	}
 }
