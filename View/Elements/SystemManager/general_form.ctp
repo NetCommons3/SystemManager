@@ -25,7 +25,7 @@ foreach ($SiteSetting->diskSpace as $size) {
 ?>
 
 <article>
-	<?php echo $this->SystemManager->inputLanguage('SiteSetting', 'App.default_timezone', array(
+	<?php echo $this->SystemManager->inputCommon('SiteSetting', 'App.default_timezone', array(
 		'type' => 'select',
 		'options' => $SiteSetting->defaultTimezones
 	)); ?>

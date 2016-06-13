@@ -18,8 +18,6 @@
 
 	<div class="panel panel-default">
 		<div class="panel-body">
-			<?php echo $this->SwitchLanguage->tablist('system-settings-'); ?>
-
 			<?php echo $this->element('SystemManager/general_form'); ?>
 		</div>
 
