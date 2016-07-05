@@ -106,7 +106,7 @@ msgid "Proxy.port"
 msgstr "プロキシポート番号"
 
 msgid "Proxy.port help"
-msgstr "プロキシを経由する場合、そのポート番号(デフォルト:8080)を数字で入力します。"
+msgstr "プロキシを経由する場合、そのポート番号を数字で入力します。"
 
 msgid "Proxy.user"
 msgstr "プロキシユーザ名"
@@ -217,7 +217,7 @@ msgstr "「192.168.1.123」「192.168.1」形式で入力してください。�
 # 開発者向け
 #
 msgid "debug"
-msgstr "デバッグ出力"
+msgstr "デバッグ出力レベル"
 
 msgid "0: No error messages, errors, or warnings shown. Flash messages redirect."
 msgstr "0: エラー・メッセージ、エラー、警告は表示されません。フラッシュメッセージがリダイレクトされます。"
