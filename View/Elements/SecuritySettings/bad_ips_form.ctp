@@ -12,21 +12,28 @@
 
 <article>
 	<?php $domId = $this->SystemManager->domId('SiteSetting.Security.enable_bad_ips'); ?>
-	<div ng-init="<?php echo $domId . ' = ' . (int)$this->SystemManager->getValue('SiteSetting', 'Security.enable_bad_ips'); ?>">
-		<?php echo $this->SystemManager->inputCommon('SiteSetting', 'Security.enable_bad_ips', array(
-				'type' => 'radio',
-				'ng-click' => $domId . ' = click($event)',
-				'options' => array(
-					'1' => __d('net_commons', 'Yes'),
-					'0' => __d('net_commons', 'No'),
-				),
-			)); ?>
 
-		<div ng-show="<?php echo $domId; ?>">
-			<?php echo $this->SystemManager->inputCommon('SiteSetting', 'Security.bad_ips', array(
-				'required' => true,
-				'help' => true,
-			)); ?>
+	<div class="form-group row" ng-init="<?php echo $domId . ' = ' . (int)$this->SystemManager->getValue('SiteSetting', 'Security.enable_bad_ips'); ?>">
+		<div class="col-xs-12">
+			<?php echo $this->SystemManager->inputCommon('SiteSetting', 'Security.enable_bad_ips', array(
+					'type' => 'radio',
+					'ng-click' => $domId . ' = click($event)',
+					'options' => array(
+						'1' => __d('net_commons', 'Yes'),
+						'0' => __d('net_commons', 'No'),
+					),
+					'div' => false
+				)); ?>
+		</div>
+
+		<div class="col-xs-offset-1 col-xs-11">
+			<div class="system-manager-enable_bad_ips" ng-show="<?php echo $domId; ?>">
+				<?php echo $this->SystemManager->inputCommon('SiteSetting', 'Security.bad_ips', array(
+					'required' => true,
+					'help' => true,
+					'div' => false
+				)); ?>
+			</div>
 		</div>
 	</div>
 </article>

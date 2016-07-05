@@ -8,6 +8,10 @@
  * @license http://www.netcommons.org/license.txt NetCommons License
  * @copyright Copyright 2014, NetCommons Project
  */
+
+$this->NetCommonsHtml->css(array(
+	'/system_manager/css/style.css'
+));
 ?>
 
 <?php echo $this->SystemManager->tabs(); ?>
@@ -18,29 +22,13 @@
 
 	<div class="panel panel-default">
 		<div class="panel-body">
-			<div class="panel panel-default">
-				<div class="panel-body">
-					<?php echo $this->element('SecuritySettings/upload_allow_extension_form'); ?>
-				</div>
-			</div>
+			<?php echo $this->element('SecuritySettings/upload_allow_extension_form'); ?>
 
-			<div class="panel panel-default">
-				<div class="panel-body">
-					<?php echo $this->element('SecuritySettings/deny_ip_move_form'); ?>
-				</div>
-			</div>
+			<?php echo $this->element('SecuritySettings/deny_ip_move_form'); ?>
 
-			<div class="panel panel-default">
-				<div class="panel-body">
-					<?php echo $this->element('SecuritySettings/bad_ips_form'); ?>
-				</div>
-			</div>
+			<?php echo $this->element('SecuritySettings/bad_ips_form'); ?>
 
-			<div class="panel panel-default">
-				<div class="panel-body">
-					<?php echo $this->element('SecuritySettings/allow_system_plugin_ips_form'); ?>
-				</div>
-			</div>
+			<?php echo $this->element('SecuritySettings/allow_system_plugin_ips_form'); ?>
 		</div>
 
 		<div class="panel-footer text-center">
