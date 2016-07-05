@@ -104,7 +104,7 @@ msgid "Proxy.port"
 msgstr "Proxy port"
 
 msgid "Proxy.port help"
-msgstr "Enter the proxy port number (Default:8080) if you useproxies"
+msgstr "Enter the proxy port number if you useproxies"
 
 msgid "Proxy.user"
 msgstr "Proxy user"
@@ -209,7 +209,7 @@ msgstr "「192.168.1.123」「192.168.1」形式で入力してください。�
 # 開発者向け
 #
 msgid "debug"
-msgstr "Output debug"
+msgstr "Output debug level"
 
 msgid "0: No error messages, errors, or warnings shown. Flash messages redirect."
 msgstr ""
