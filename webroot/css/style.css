@@ -9,7 +9,3 @@
 .system-manager-developer .radio-inline:first-child {
 	padding-left: 0px;
 }
-.system-manager-enable_bad_ips,
-.system-manager-enable_allow_system_plugin_ips {
-	margin-top: 8px;
-}
