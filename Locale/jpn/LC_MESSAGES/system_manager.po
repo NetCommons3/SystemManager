@@ -106,7 +106,7 @@ msgid "Proxy.port"
 msgstr "プロキシポート番号"
 
 msgid "Proxy.port help"
-msgstr "プロキシを経由する場合、そのポート番号(デフォルト:8080)を数字で入力します。"
+msgstr "プロキシを経由する場合、そのポート番号を数字で入力します。"
 
 msgid "Proxy.user"
 msgstr "プロキシユーザ名"
