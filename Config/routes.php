@@ -10,5 +10,5 @@
 
 Router::connect(
 	'/system_manager/:controller/:action/*',
-	array('plugin' => 'site_manager')
+	array('plugin' => 'system_manager')
 );
