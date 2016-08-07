@@ -36,6 +36,7 @@ NetCommonsApp.controller('SystemManager', ['$scope', '$window', function($scope,
    * @return {void}
    */
   $scope.cancel = function() {
+    $scope.sending = true;
     $window.location.reload();
   };
 
