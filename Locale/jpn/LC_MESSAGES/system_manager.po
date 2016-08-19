@@ -178,7 +178,7 @@ msgstr "SMTPAuthを使う場合、入力してください。"
 # セキュリティ設定
 #
 msgid "Upload.allow_extension"
-msgstr "アップロードファイルを許可する拡張子"
+msgstr "アップロードを許可するファイル拡張子"
 
 msgid "Upload.allow_extension help"
 msgstr "複数指定するときは、「,」区切りで入力してください。"
