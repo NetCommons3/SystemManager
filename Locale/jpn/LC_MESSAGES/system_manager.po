@@ -187,7 +187,9 @@ msgid "Security.deny_ip_move"
 msgstr "IP変動を禁止する会員権限"
 
 msgid "Security.deny_ip_move help"
-msgstr "IP変動を禁止しない場合、セッションハイジャックされる可能性があります。"
+msgstr "セッション中に異なるIPアドレスからのアクセスを禁止する会員権限の指定ができます。<br>"
+"管理者については、ONにすることをお勧めします。IP変動を禁止することで、セッションハイジャックのリスクが軽減されます。<br>"
+"ただし、DHCPを利用している環境では、IPアドレスが変わってしまうため、OFFにしないとログインできなくなります。"
 
 msgid "Security.enable_bad_ips"
 msgstr "IPアドレスでアクセスを拒否する"
