@@ -26,7 +26,12 @@
 			<div class="col-xs-offset-1 col-xs-11">
 				<?php echo $this->SystemManager->inputCommon('SiteSetting', 'Security.bad_ips', array(
 					'required' => true,
-					'help' => true,
+					'help' => '<div class="help-block">' . __d('system_manager', 'Security.bad_ips help') . '</div>' .
+							'<div class="alert alert-warning">' .
+								__d('system_manager', 'If you enter the wrong IP address, you will not be able to transition to the management screen. ' .
+										'Please enter did on each confirmed well.') .
+							'</div>',
+					'helpOptions' => array('escape' => false)
 				)); ?>
 			</div>
 		</div>
