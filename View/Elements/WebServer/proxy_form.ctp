@@ -23,31 +23,27 @@
 				),
 			)); ?>
 
-		<div ng-show="<?php echo $domId; ?>">
-			<?php echo $this->SystemManager->inputCommon('SiteSetting', 'Proxy.host', array(
-					'help' => true,
-					'required' => true,
-				)); ?>
-		</div>
+		<div class="row" ng-show="<?php echo $domId; ?>" ng-cloak>
+			<div class="col-xs-offset-1 col-xs-11">
+				<?php echo $this->SystemManager->inputCommon('SiteSetting', 'Proxy.host', array(
+						'help' => true,
+						'required' => true,
+					)); ?>
 
-		<div ng-show="<?php echo $domId; ?>">
-			<?php echo $this->SystemManager->inputCommon('SiteSetting', 'Proxy.port', array(
-					'help' => true,
-					'required' => true,
-				)); ?>
-		</div>
+				<?php echo $this->SystemManager->inputCommon('SiteSetting', 'Proxy.port', array(
+						'help' => true,
+						'required' => true,
+					)); ?>
 
-		<div ng-show="<?php echo $domId; ?>">
-			<?php echo $this->SystemManager->inputCommon('SiteSetting', 'Proxy.user', array(
-					'help' => true,
-				)); ?>
-		</div>
+				<?php echo $this->SystemManager->inputCommon('SiteSetting', 'Proxy.user', array(
+						'help' => true,
+					)); ?>
 
-		<div ng-show="<?php echo $domId; ?>">
-			<?php echo $this->SystemManager->inputCommon('SiteSetting', 'Proxy.pass', array(
-					'type' => 'password',
-					'help' => true,
-				)); ?>
+				<?php echo $this->SystemManager->inputCommon('SiteSetting', 'Proxy.pass', array(
+						'type' => 'password',
+						'help' => true,
+					)); ?>
+			</div>
 		</div>
 	</div>
 </article>

@@ -22,11 +22,13 @@
 				),
 			)); ?>
 
-		<div ng-show="<?php echo $domId; ?>">
-			<?php echo $this->SystemManager->inputCommon('SiteSetting', 'Security.bad_ips', array(
-				'required' => true,
-				'help' => true,
-			)); ?>
+		<div class="row" ng-show="<?php echo $domId; ?>" ng-cloak>
+			<div class="col-xs-offset-1 col-xs-11">
+				<?php echo $this->SystemManager->inputCommon('SiteSetting', 'Security.bad_ips', array(
+					'required' => true,
+					'help' => true,
+				)); ?>
+			</div>
 		</div>
 	</div>
 </article>
