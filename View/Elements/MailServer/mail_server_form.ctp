@@ -37,31 +37,27 @@ $SiteSetting->prepare();
 			'help' => true,
 		)); ?>
 
-		<div ng-show="<?php echo $transportDomId . ' === \'' . SiteSetting::MAIL_TRANSPORT_SMTP . '\''; ?>">
-			<?php echo $this->SystemManager->inputCommon('SiteSetting', 'Mail.smtp.host', array(
-					'required' => true,
-					'help' => true,
-				)); ?>
-		</div>
+		<div class="row" ng-show="<?php echo $transportDomId . ' === \'' . SiteSetting::MAIL_TRANSPORT_SMTP . '\''; ?>">
+			<div class="col-xs-offset-1 col-xs-11">
+				<?php echo $this->SystemManager->inputCommon('SiteSetting', 'Mail.smtp.host', array(
+						'required' => true,
+						'help' => true,
+					)); ?>
 
-		<div ng-show="<?php echo $transportDomId . ' === \'' . SiteSetting::MAIL_TRANSPORT_SMTP . '\''; ?>">
-			<?php echo $this->SystemManager->inputCommon('SiteSetting', 'Mail.smtp.port', array(
-					'required' => true,
-					'help' => true,
-				)); ?>
-		</div>
+				<?php echo $this->SystemManager->inputCommon('SiteSetting', 'Mail.smtp.port', array(
+						'required' => true,
+						'help' => true,
+					)); ?>
 
-		<div ng-show="<?php echo $transportDomId . ' === \'' . SiteSetting::MAIL_TRANSPORT_SMTP . '\''; ?>">
-			<?php echo $this->SystemManager->inputCommon('SiteSetting', 'Mail.smtp.user', array(
-					'help' => true,
-				)); ?>
-		</div>
+				<?php echo $this->SystemManager->inputCommon('SiteSetting', 'Mail.smtp.user', array(
+						'help' => true,
+					)); ?>
 
-		<div ng-show="<?php echo $transportDomId . ' === \'' . SiteSetting::MAIL_TRANSPORT_SMTP . '\''; ?>">
-			<?php echo $this->SystemManager->inputCommon('SiteSetting', 'Mail.smtp.pass', array(
-					'type' => 'password',
-					'help' => true,
-				)); ?>
+				<?php echo $this->SystemManager->inputCommon('SiteSetting', 'Mail.smtp.pass', array(
+						'type' => 'password',
+						'help' => true,
+					)); ?>
+			</div>
 		</div>
 	</div>
 </article>
