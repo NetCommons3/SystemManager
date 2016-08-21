@@ -174,6 +174,12 @@ msgstr "SMTPAuthパスワード"
 msgid "Mail.smtp.pass help"
 msgstr "SMTPAuthを使う場合、入力してください。"
 
+msgid "Mail.smtp.tls"
+msgstr "STARTTLSを使用する"
+
+msgid "Mail.smtp.tls help"
+msgstr "STARTTLSでメール送信を暗号化したい場合、はいを選択してください。"
+
 #
 # セキュリティ設定
 #
