@@ -172,6 +172,12 @@ msgstr "SMTPAuth password"
 msgid "Mail.smtp.pass help"
 msgstr "SMTPAuthを使う場合、入力してください。"
 
+msgid "Mail.smtp.tls"
+msgstr "Use STARTTLS"
+
+msgid "Mail.smtp.tls help"
+msgstr "If you want to encrypt the e-mail sent in the STARTTLS, please select Yes."
+
 #
 # セキュリティ設定
 #

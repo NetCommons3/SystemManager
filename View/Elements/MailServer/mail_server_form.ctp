@@ -57,6 +57,15 @@ $SiteSetting->prepare();
 						'type' => 'password',
 						'help' => true,
 					)); ?>
+
+				<?php echo $this->SystemManager->inputCommon('SiteSetting', 'Mail.smtp.tls', array(
+						'type' => 'radio',
+						'options' => array(
+							'1' => __d('net_commons', 'Yes'),
+							'0' => __d('net_commons', 'No'),
+						),
+						'help' => true,
+					)); ?>
 			</div>
 		</div>
 	</div>
