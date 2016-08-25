@@ -204,6 +204,9 @@ msgstr "Access refusal IP address"
 msgid "Contains the current IP address. Please excluded from the list."
 msgstr ""
 
+msgid "If you enter the wrong IP address, You will not be able to access the web site. Please enter did on each confirmed well."
+msgstr ""
+
 msgid "Security.bad_ips help"
 msgstr "Enter in the IPv4 format. Range specified is also possible. (`192.168.1.123`, `192.168.1.0/24` format)"
 "If you want to specify more than one, `|` Please enter the delimiter."

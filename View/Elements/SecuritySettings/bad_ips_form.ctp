@@ -28,8 +28,8 @@
 					'required' => true,
 					'help' => '<div class="help-block">' . __d('system_manager', 'Security.bad_ips help') . '</div>' .
 							'<div class="alert alert-warning">' .
-								__d('system_manager', 'If you enter the wrong IP address, you will not be able to transition to the management screen. ' .
-										'Please enter did on each confirmed well.') .
+								__d('system_manager', 'If you enter the wrong IP address, You will not be able to access the web site. ' .
+											'Please enter did on each confirmed well.') .
 							'</div>',
 					'helpOptions' => array('escape' => false)
 				)); ?>

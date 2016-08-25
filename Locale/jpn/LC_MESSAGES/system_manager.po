@@ -206,6 +206,9 @@ msgstr "アクセスを拒否するIPアドレス"
 msgid "Contains the current IP address. Please excluded from the list."
 msgstr "現在のIPアドレスが含まれています。リストから除いてください。"
 
+msgid "If you enter the wrong IP address, You will not be able to access the web site. Please enter did on each confirmed well."
+msgstr "IPアドレスを誤って入力すると、サイトにアクセスできなくなります。よく各確認した上で入力してください。"
+
 msgid "Security.bad_ips help"
 msgstr "IPv4形式で入力してください。範囲指定も可能です。（「192.168.1.123」「192.168.1.0/24」形式）<br>"
 "複数指定する場合は、「|」区切りで入力してください。"
