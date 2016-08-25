@@ -205,7 +205,8 @@ msgid "Contains the current IP address. Please excluded from the list."
 msgstr ""
 
 msgid "Security.bad_ips help"
-msgstr "Please enter `192.168.1.123`, `192.168.1` format. When the plural IP address is specified, each IP address is delimited by `|`."
+msgstr "Enter in the IPv4 format. Range specified is also possible. (`192.168.1.123`, `192.168.1.0/24` format)"
+"If you want to specify more than one, `|` Please enter the delimiter."
 
 msgid "Security.enable_allow_system_plugin_ips"
 msgstr "Use to control the access of the management screen in the IP address"
@@ -217,7 +218,8 @@ msgid "It does not include the current IP address. Please add to the list."
 msgstr ""
 
 msgid "Security.allow_system_plugin_ips help"
-msgstr "Please enter `192.168.1.123`, `192.168.1` format. When the plural IP address is specified, each IP address is delimited by `|`. IP address of itself has been automatically set."
+msgstr "Enter in the IPv4 format. Range specified is also possible. (`192.168.1.123`, `192.168.1.0/24` format)"
+"If you want to specify more than one, `|` Please enter the delimiter."
 
 msgid "If you enter the wrong IP address, you will not be able to transition to the management screen. Please enter did on each confirmed well."
 msgstr ""
