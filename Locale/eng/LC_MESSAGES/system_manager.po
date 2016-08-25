@@ -38,16 +38,16 @@ msgid "App.default_timezone"
 msgstr "Default timezone"
 
 msgid "App.disk_for_group_room"
-msgstr "Disk space for group room"
+msgstr "Disk space for community room"
 
 msgid "App.disk_for_group_room help"
-msgstr "Set the limit of the total amount of files which can be stored in each grouproom."
+msgstr "Set the limit of the total amount of files which can be stored in each community room."
 
 msgid "App.disk_for_private_room"
 msgstr "Disk space for private room"
 
 msgid "App.disk_for_private_room help"
-msgstr "Set the limit of the total amount of files which can be stored in each privateroom."
+msgstr "Set the limit of the total amount of files which can be stored in each private room."
 
 msgid "Unlimited"
 msgstr ""

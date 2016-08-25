@@ -37,16 +37,16 @@ msgid "App.default_timezone"
 msgstr "デフォルトのタイムゾーン"
 
 msgid "App.disk_for_group_room"
-msgstr "グループルームの容量"
+msgstr "各コミュニティの容量"
 
 msgid "App.disk_for_group_room help"
-msgstr "各グループルームにアップロードできるファイルの総量を指定します。"
+msgstr "各コミュニティにアップロードできるファイルの総量を指定します。"
 
 msgid "App.disk_for_private_room"
-msgstr "プライベートルームの容量"
+msgstr "各プライベートの容量"
 
 msgid "App.disk_for_private_room help"
-msgstr "各プライベートルームにアップロードできるファイルの総量を指定します。"
+msgstr "各プライベートにアップロードできるファイルの総量を指定します。"
 
 msgid "Unlimited"
 msgstr "無制限"
