@@ -17,19 +17,19 @@ msgstr ""
 # タブ文言
 #
 msgid "Tab.system_manager"
-msgstr "一般設定"
+msgstr "General setting"
 
 msgid "Tab.web_server"
-msgstr "サーバ設定"
+msgstr "Server setting"
 
 msgid "Tab.mail_server"
-msgstr "メール設定"
+msgstr "Mail setting"
 
 msgid "Tab.security_settings"
-msgstr "セキュリティ設定"
+msgstr "Security setting"
 
 msgid "Tab.developer"
-msgstr "開発者向け"
+msgstr "Developer"
 
 #
 # 一般設定
@@ -59,7 +59,7 @@ msgid "Php.memory_limit"
 msgstr "Maximum number of memories"
 
 msgid "Session.ini.session.name"
-msgstr "Cookieの名称"
+msgstr "Session cookie name"
 
 #
 # セッションタイムアウト
@@ -164,13 +164,13 @@ msgid "Mail.smtp.user"
 msgstr "SMTPAuth username"
 
 msgid "Mail.smtp.user help"
-msgstr "SMTPAuthを使う場合、入力してください。"
+msgstr "If you use the SMTPAuth, please enter."
 
 msgid "Mail.smtp.pass"
 msgstr "SMTPAuth password"
 
 msgid "Mail.smtp.pass help"
-msgstr "SMTPAuthを使う場合、入力してください。"
+msgstr "If you use the SMTPAuth, please enter."
 
 msgid "Mail.smtp.tls"
 msgstr "Use STARTTLS"
@@ -182,34 +182,45 @@ msgstr "If you want to encrypt the e-mail sent in the STARTTLS, please select Ye
 # セキュリティ設定
 #
 msgid "Upload.allow_extension"
-msgstr "アップロードファイルを許可する拡張子"
+msgstr "Permission setting of extension of uploading file"
 
 msgid "Upload.allow_extension help"
-msgstr "複数指定するときは、「,」区切りで入力してください。"
+msgstr "When the plural extensions is specified, each extensions is delimited by `,` ."
 
 msgid "Security.deny_ip_move"
-msgstr "IP変動を禁止する会員権限"
+msgstr "Base authority to prohibit IP change"
 
 msgid "Security.deny_ip_move help"
-msgstr "IP変動を禁止しない場合、セッションハイジャックされる可能性があります。"
+msgstr "You can specify the member authority to prohibit access from different IP address during the session."
+"For the administrator, it is recommended that you to ON. By prohibiting the IP change, the risk of session hijacking is reduced."
+"However, in the environment you are using DHCP, because the IP address would change, you will not be able to log in and not to OFF."
 
 msgid "Security.enable_bad_ips"
-msgstr "IPアドレスでアクセスを拒否する"
+msgstr "Use access refusal IP address"
 
 msgid "Security.bad_ips"
-msgstr "アクセスを拒否するIPアドレス"
+msgstr "Access refusal IP address"
+
+msgid "Contains the current IP address. Please excluded from the list."
+msgstr ""
 
 msgid "Security.bad_ips help"
-msgstr "「192.168.1.123」「192.168.1」形式で入力してください。複数指定する場合は、「|」区切りで入力してください。"
+msgstr "Please enter `192.168.1.123`, `192.168.1` format. When the plural IP address is specified, each IP address is delimited by `|`."
 
 msgid "Security.enable_allow_system_plugin_ips"
-msgstr "管理画面のアクセスをIPアドレスで制御する"
+msgstr "Use to control the access of the management screen in the IP address"
 
 msgid "Security.allow_system_plugin_ips"
-msgstr "アクセスを許可するIPアドレス"
+msgstr "IP address to allow access"
+
+msgid "It does not include the current IP address. Please add to the list."
+msgstr ""
 
 msgid "Security.allow_system_plugin_ips help"
-msgstr "「192.168.1.123」「192.168.1」形式で入力してください。複数指定する場合は、「|」区切りで入力してください。"
+msgstr "Please enter `192.168.1.123`, `192.168.1` format. When the plural IP address is specified, each IP address is delimited by `|`. IP address of itself has been automatically set."
+
+msgid "If you enter the wrong IP address, you will not be able to transition to the management screen. Please enter did on each confirmed well."
+msgstr ""
 
 #
 # 開発者向け
@@ -220,7 +231,7 @@ msgstr "Output debug level"
 msgid "0: No error messages, errors, or warnings shown. Flash messages redirect."
 msgstr ""
 
-msgid "1: Errors and warnings shown, model caches refreshed, flash messages halted.<br>"
+msgid "1: Errors and warnings shown, model caches refreshed, flash messages halted."
 msgstr ""
 
 msgid "2: As in 1, but also with full debug messages and SQL output."
