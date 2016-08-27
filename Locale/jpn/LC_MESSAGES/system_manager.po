@@ -154,7 +154,7 @@ msgid "Mail.smtp.host"
 msgstr "SMTPサーバアドレス"
 
 msgid "Mail.smtp.host help"
-msgstr "SMTPサーバのホスト名、またはIPアドレスの一覧を記入してください。"
+msgstr "SMTPサーバのホスト名、またはIPアドレスを記入してください。"
 
 msgid "Mail.smtp.port"
 msgstr "SMTPポート番号"
