@@ -20,7 +20,7 @@ $SiteSetting->prepare();
 		'options' => $SiteSetting->memoryLimit,
 	)); ?>
 
-	<?php echo $this->SystemManager->inputCommon('SiteSetting', 'Session.ini.session.name'); ?>
+	<?php echo $this->SystemManager->inputCommon('SiteSetting', 'Session.cookie'); ?>
 
 	<?php echo $this->SystemManager->inputCommon('SiteSetting', 'Session.ini.session.cookie_lifetime', array(
 		'options' => $SiteSetting->sessionTimeout,

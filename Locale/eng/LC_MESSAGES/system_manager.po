@@ -58,7 +58,7 @@ msgstr ""
 msgid "Php.memory_limit"
 msgstr "Maximum number of memories"
 
-msgid "Session.ini.session.name"
+msgid "Session.cookie"
 msgstr "Session cookie name"
 
 #

@@ -57,7 +57,7 @@ msgstr "無制限"
 msgid "Php.memory_limit"
 msgstr "PHP最大メモリ数"
 
-msgid "Session.ini.session.name"
+msgid "Session.cookie"
 msgstr "Cookieの名称"
 
 #
