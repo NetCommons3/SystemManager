@@ -58,7 +58,7 @@ msgid "Php.memory_limit"
 msgstr "PHP最大メモリ数"
 
 msgid "Session.cookie"
-msgstr "Cookieの名称"
+msgstr "Cookieの名"
 
 #
 # セッションタイムアウト
