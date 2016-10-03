@@ -50,9 +50,9 @@ class WebServerController extends SystemManagerAppController {
 					'Session.cookie',
 
 					// * 自動ログアウトする時間(cookie_lifetime)(6時間)
-					'Session.ini.session.cookie_lifetime',
+					'Session.ini.[session.cookie_lifetime]',
 					// * 自動ログアウトする時間(gc_maxlifetime)(6時間)
-					'Session.ini.session.gc_maxlifetime',
+					'Session.ini.[session.gc_maxlifetime]',
 
 					// * プロキシ
 					// ** プロキシサーバを使用する

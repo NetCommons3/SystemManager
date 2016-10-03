@@ -58,15 +58,15 @@ msgid "Php.memory_limit"
 msgstr "PHP最大メモリ数"
 
 msgid "Session.cookie"
-msgstr "Cookieの名称"
+msgstr "Cookieの名"
 
 #
 # セッションタイムアウト
 #
-msgid "Session.ini.session.cookie_lifetime"
+msgid "Session.ini.[session.cookie_lifetime]"
 msgstr "セッションタイムアウト"
 
-msgid "Session.ini.session.cookie_lifetime help"
+msgid "Session.ini.[session.cookie_lifetime] help"
 msgstr "ログインした後、ここで設定した時間の間にブラウザから要求がないと自動的にログアウトします。"
 
 msgid "%s minutes"
