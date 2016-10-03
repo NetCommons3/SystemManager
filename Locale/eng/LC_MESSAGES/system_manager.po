@@ -64,10 +64,10 @@ msgstr "Session cookie name"
 #
 # セッションタイムアウト
 #
-msgid "Session.ini.session.cookie_lifetime"
+msgid "Session.ini.[session.cookie_lifetime]"
 msgstr "Time for automatic logout"
 
-msgid "Session.ini.session.cookie_lifetime help"
+msgid "Session.ini.[session.cookie_lifetime] help"
 msgstr "If user login while setting the system will not anwers request from the browser,Automatically Logout."
 
 msgid "%s minutes"
