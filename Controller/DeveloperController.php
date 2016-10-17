@@ -10,6 +10,7 @@
  */
 
 App::uses('SystemManagerAppController', 'SystemManager.Controller');
+App::uses('File', 'Utility');
 
 /**
  * システム管理【開発者向け】
@@ -18,6 +19,13 @@ App::uses('SystemManagerAppController', 'SystemManager.Controller');
  * @package NetCommons\SystemManager\Controller
  */
 class DeveloperController extends SystemManagerAppController {
+
+/**
+ * application.ymlのプレフィックス(Unitテストで使用する)
+ *
+ * @return array
+ */
+	public $appYmlPrefix = '';
 
 /**
  * use model
@@ -40,7 +48,16 @@ class DeveloperController extends SystemManagerAppController {
 			if (! $this->request->data['SiteSetting']['only_session']) {
 				unset($this->request->data['SiteSetting']['only_session']);
 				$this->Session->write('debug', null);
+
+				//application.ymlに書き込み
+				$conf = Spyc::YAMLLoad(APP . 'Config' . DS . 'application.yml');
+				$conf['debug'] = (int)$this->request->data['SiteSetting']['debug']['0']['value'];
+
+				$file = new File(APP . 'Config' . DS . $this->appYmlPrefix . 'application.yml', true);
+				$file->write(Spyc::YAMLDump($conf));
+
 				$this->SiteManager->saveData();
+
 			} else {
 				$this->SiteSetting->validateDeveloper($this->request->data);
 				if (! $this->SiteSetting->validationErrors) {
