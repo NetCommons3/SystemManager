@@ -20,12 +20,14 @@
 					'1' => __d('net_commons', 'Yes'),
 					'0' => __d('net_commons', 'No'),
 				),
+				'label' => __d('system_manager', 'Security.enable_bad_ips'),
 			)); ?>
 
 		<div class="row" ng-show="<?php echo $domId; ?>" ng-cloak>
 			<div class="col-xs-offset-1 col-xs-11">
 				<?php echo $this->SystemManager->inputCommon('SiteSetting', 'Security.bad_ips', array(
 					'required' => true,
+					'label' => __d('system_manager', 'Security.bad_ips'),
 					'help' => '<div class="help-block">' . __d('system_manager', 'Security.bad_ips help') . '</div>' .
 							'<div class="alert alert-warning">' .
 								__d('system_manager', 'If you enter the wrong IP address, You will not be able to access the web site. ' .

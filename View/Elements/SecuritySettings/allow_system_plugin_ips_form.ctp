@@ -20,12 +20,14 @@
 					'1' => __d('net_commons', 'Yes'),
 					'0' => __d('net_commons', 'No'),
 				),
+				'label' => __d('system_manager', 'Security.enable_allow_system_plugin_ips'),
 			)); ?>
 
 		<div class="row" ng-show="<?php echo $domId; ?>" ng-cloak>
 			<div class="col-xs-offset-1 col-xs-11">
 				<?php echo $this->SystemManager->inputCommon('SiteSetting', 'Security.allow_system_plugin_ips', array(
 					'required' => true,
+					'label' => __d('system_manager', 'Security.allow_system_plugin_ips'),
 					'help' => '<div class="help-block">' . __d('system_manager', 'Security.allow_system_plugin_ips help') . '</div>' .
 							'<div class="alert alert-warning">' .
 								__d('system_manager', 'If you enter the wrong IP address, you will not be able to transition to the management screen. ' .

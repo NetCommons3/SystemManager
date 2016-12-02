@@ -33,6 +33,7 @@ $SiteSetting->prepare();
 	<?php echo $this->SystemManager->inputCommon('SiteSetting', 'debug', array(
 		'type' => 'select',
 		'options' => $SiteSetting->debugOptions,
-		'help' => true,
+		'label' => __d('system_manager', 'debug'),
+		'help' => __d('system_manager', 'debug help'),
 	)); ?>
 </article>

@@ -119,8 +119,8 @@ class SystemManagerHelper extends AppHelper {
  * @param string $labelPlugin __dのプラグイン名
  * @return string HTML
  */
-	public function inputCommon($model, $key, $options = array(), $labelPlugin = 'system_manager') {
-		return $this->SiteManager->inputCommon($model, $key, $options, $labelPlugin);
+	public function inputCommon($model, $key, $options = array()) {
+		return $this->SiteManager->inputCommon($model, $key, $options);
 	}
 
 /**
@@ -132,8 +132,8 @@ class SystemManagerHelper extends AppHelper {
  * @param string $labelPlugin __dのプラグイン名
  * @return string HTML
  */
-	public function inputLanguage($model, $key, $options = array(), $labelPlugin = 'system_manager') {
-		return $this->SiteManager->inputLanguage($model, $key, $options, $labelPlugin);
+	public function inputLanguage($model, $key, $options = array()) {
+		return $this->SiteManager->inputLanguage($model, $key, $options);
 	}
 
 /**

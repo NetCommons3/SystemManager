@@ -18,13 +18,17 @@ $SiteSetting->prepare();
 	<?php echo $this->SystemManager->inputCommon('SiteSetting', 'Php.memory_limit', array(
 		'type' => 'select',
 		'options' => $SiteSetting->memoryLimit,
+		'label' => __d('system_manager', 'Php.memory_limit'),
 	)); ?>
 
-	<?php echo $this->SystemManager->inputCommon('SiteSetting', 'Session.cookie'); ?>
+	<?php echo $this->SystemManager->inputCommon('SiteSetting', 'Session.cookie', array(
+		'label' => __d('system_manager', 'Session.cookie'),
+	)); ?>
 
 	<?php echo $this->SystemManager->inputCommon('SiteSetting', 'Session.ini.[session.cookie_lifetime]', array(
 		'options' => $SiteSetting->sessionTimeout,
-		'help' => true
+		'label' => __d('system_manager', 'Session.ini.[session.cookie_lifetime]'),
+		'help' => __d('system_manager', 'Session.ini.[session.cookie_lifetime] help'),
 	)); ?>
 
 	<?php echo $this->SystemManager->inputHidden('SiteSetting', 'Session.ini.[session.gc_maxlifetime]', '0'); ?>

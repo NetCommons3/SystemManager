@@ -17,15 +17,18 @@ $SiteSetting->prepare();
 <article>
 	<?php echo $this->SystemManager->inputCommon('SiteSetting', 'Mail.from', array(
 		'required' => true,
+		'label' => __d('system_manager', 'Mail.from'),
 	)); ?>
 
 	<?php echo $this->SystemManager->inputLanguage('SiteSetting', 'Mail.from_name', array(
-		'help' => true
+		'label' => __d('system_manager', 'Mail.from_name'),
+		'help' => __d('system_manager', 'Mail.from_name help'),
 	)); ?>
 
 	<?php echo $this->SystemManager->inputCommon('SiteSetting', 'Mail.messageType', array(
 			'type' => 'radio',
 			'options' => $SiteSetting->mailMessageType,
+			'label' => __d('system_manager', 'Mail.messageType'),
 		)); ?>
 
 	<?php $transportDomId = $this->SystemManager->domId('SiteSetting.Mail.transport'); ?>
@@ -34,28 +37,33 @@ $SiteSetting->prepare();
 			'type' => 'select',
 			'options' => $SiteSetting->mailTransport,
 			'ng-model' => $transportDomId,
-			'help' => true,
+			'label' => __d('system_manager', 'Mail.transport'),
+			'help' => __d('system_manager', 'Mail.transport help'),
 		)); ?>
 
 		<div class="row" ng-show="<?php echo $transportDomId . ' === \'' . SiteSetting::MAIL_TRANSPORT_SMTP . '\''; ?>">
 			<div class="col-xs-offset-1 col-xs-11">
 				<?php echo $this->SystemManager->inputCommon('SiteSetting', 'Mail.smtp.host', array(
 						'required' => true,
-						'help' => true,
+						'label' => __d('system_manager', 'Mail.smtp.host'),
+						'help' => __d('system_manager', 'Mail.smtp.host help'),
 					)); ?>
 
 				<?php echo $this->SystemManager->inputCommon('SiteSetting', 'Mail.smtp.port', array(
 						'required' => true,
-						'help' => true,
+						'label' => __d('system_manager', 'Mail.smtp.port'),
+						'help' => __d('system_manager', 'Mail.smtp.port help'),
 					)); ?>
 
 				<?php echo $this->SystemManager->inputCommon('SiteSetting', 'Mail.smtp.user', array(
-						'help' => true,
+						'label' => __d('system_manager', 'Mail.smtp.user'),
+						'help' => __d('system_manager', 'Mail.smtp.user help'),
 					)); ?>
 
 				<?php echo $this->SystemManager->inputCommon('SiteSetting', 'Mail.smtp.pass', array(
 						'type' => 'password',
-						'help' => true,
+						'label' => __d('system_manager', 'Mail.smtp.pass'),
+						'help' => __d('system_manager', 'Mail.smtp.pass help'),
 					)); ?>
 
 				<?php echo $this->SystemManager->inputCommon('SiteSetting', 'Mail.smtp.tls', array(
@@ -64,7 +72,8 @@ $SiteSetting->prepare();
 							'1' => __d('net_commons', 'Yes'),
 							'0' => __d('net_commons', 'No'),
 						),
-						'help' => true,
+						'label' => __d('system_manager', 'Mail.smtp.tls'),
+						'help' => __d('system_manager', 'Mail.smtp.tls help'),
 					)); ?>
 			</div>
 		</div>
