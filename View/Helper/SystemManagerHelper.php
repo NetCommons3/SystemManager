@@ -116,7 +116,6 @@ class SystemManagerHelper extends AppHelper {
  * @param string $model モデル名
  * @param string $key キー
  * @param array $options オプション
- * @param string $labelPlugin __dのプラグイン名
  * @return string HTML
  */
 	public function inputCommon($model, $key, $options = array()) {
@@ -129,7 +128,6 @@ class SystemManagerHelper extends AppHelper {
  * @param string $model モデル名
  * @param string $key キー
  * @param array $options オプション
- * @param string $labelPlugin __dのプラグイン名
  * @return string HTML
  */
 	public function inputLanguage($model, $key, $options = array()) {
