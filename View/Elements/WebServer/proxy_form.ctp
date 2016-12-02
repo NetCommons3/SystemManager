@@ -21,27 +21,32 @@
 					'1' => __d('net_commons', 'Yes'),
 					'0' => __d('net_commons', 'No'),
 				),
+				'label' => __d('system_manager', 'Proxy.use_proxy'),
 			)); ?>
 
 		<div class="row" ng-show="<?php echo $domId; ?>" ng-cloak>
 			<div class="col-xs-offset-1 col-xs-11">
 				<?php echo $this->SystemManager->inputCommon('SiteSetting', 'Proxy.host', array(
-						'help' => true,
+						'label' => __d('system_manager', 'Proxy.host'),
+						'help' => __d('system_manager', 'Proxy.host help'),
 						'required' => true,
 					)); ?>
 
 				<?php echo $this->SystemManager->inputCommon('SiteSetting', 'Proxy.port', array(
-						'help' => true,
+						'label' => __d('system_manager', 'Proxy.port'),
+						'help' => __d('system_manager', 'Proxy.port help'),
 						'required' => true,
 					)); ?>
 
 				<?php echo $this->SystemManager->inputCommon('SiteSetting', 'Proxy.user', array(
-						'help' => true,
+						'label' => __d('system_manager', 'Proxy.user'),
+						'help' => __d('system_manager', 'Proxy.user help'),
 					)); ?>
 
 				<?php echo $this->SystemManager->inputCommon('SiteSetting', 'Proxy.pass', array(
 						'type' => 'password',
-						'help' => true,
+						'label' => __d('system_manager', 'Proxy.pass'),
+						'help' => __d('system_manager', 'Proxy.pass help'),
 					)); ?>
 			</div>
 		</div>

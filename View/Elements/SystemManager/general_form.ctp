@@ -27,18 +27,21 @@ foreach ($SiteSetting->diskSpace as $size) {
 <article>
 	<?php echo $this->SystemManager->inputCommon('SiteSetting', 'App.default_timezone', array(
 		'type' => 'select',
-		'options' => $SiteSetting->defaultTimezones
+		'options' => $SiteSetting->defaultTimezones,
+		'label' => __d('system_manager', 'App.default_timezone'),
 	)); ?>
 
 	<?php echo $this->SystemManager->inputCommon('SiteSetting', 'App.disk_for_group_room', array(
 		'type' => 'select',
 		'options' => $diskSpace,
-		'help' => true
+		'label' => __d('system_manager', 'App.disk_for_group_room'),
+		'help' => __d('system_manager', 'App.disk_for_group_room help'),
 	)); ?>
 
 	<?php echo $this->SystemManager->inputCommon('SiteSetting', 'App.disk_for_private_room', array(
 		'type' => 'select',
 		'options' => $diskSpace,
-		'help' => true
+		'label' => __d('system_manager', 'App.disk_for_private_room'),
+		'help' => __d('system_manager', 'App.disk_for_private_room help'),
 	)); ?>
 </article>

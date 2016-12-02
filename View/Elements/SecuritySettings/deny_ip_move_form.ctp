@@ -17,6 +17,7 @@
 		'multiple' => 'checkbox',
 		'options' => $userRoles,
 		'value' => explode('|', $this->SystemManager->getValue('SiteSetting', 'Security.deny_ip_move')),
-		'help' => true,
+		'label' => __d('system_manager', 'Security.deny_ip_move'),
+		'help' => __d('system_manager', 'Security.deny_ip_move help'),
 	)); ?>
 </article>

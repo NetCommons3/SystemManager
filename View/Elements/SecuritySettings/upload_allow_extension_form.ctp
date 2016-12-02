@@ -14,6 +14,7 @@
 	<?php echo $this->SystemManager->inputCommon('SiteSetting', 'Upload.allow_extension', array(
 		'type' => 'textarea',
 		'required' => true,
-		'help' => true,
+		'label' => __d('system_manager', 'Upload.allow_extension'),
+		'help' => __d('system_manager', 'Upload.allow_extension help'),
 	)); ?>
 </article>
