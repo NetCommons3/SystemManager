@@ -16,239 +16,339 @@ msgstr ""
 #
 # タブ文言
 #
+#: SystemManager/View/Helper/SystemManagerHelper.php:105
 msgid "Tab.system_manager"
 msgstr "General setting"
 
+#: SystemManager/View/Helper/SystemManagerHelper.php:105
 msgid "Tab.web_server"
 msgstr "Server setting"
 
+#: SystemManager/View/Helper/SystemManagerHelper.php:105
 msgid "Tab.mail_server"
 msgstr "Mail setting"
 
+#: SystemManager/View/Helper/SystemManagerHelper.php:105
 msgid "Tab.security_settings"
 msgstr "Security setting"
 
+#: SystemManager/View/Helper/SystemManagerHelper.php:105
 msgid "Tab.developer"
 msgstr "Developer"
 
 #
 # 一般設定
 #
+#: SystemManager/View/Elements/SystemManager/general_form.ctp:20
+msgid "Unlimited"
+msgstr ""
+
+#: SystemManager/View/Elements/SystemManager/general_form.ctp:31
 msgid "App.default_timezone"
 msgstr "Default timezone"
 
+#: SystemManager/View/Elements/SystemManager/general_form.ctp:37
 msgid "App.disk_for_group_room"
 msgstr "Disk space for community room"
 
+#: SystemManager/View/Elements/SystemManager/general_form.ctp:38
 msgid "App.disk_for_group_room help"
 msgstr "Set the limit of the total amount of files which can be stored in each community room."
 
+#: SystemManager/View/Elements/SystemManager/general_form.ctp:44
 msgid "App.disk_for_private_room"
 msgstr "Disk space for private room"
 
+#: SystemManager/View/Elements/SystemManager/general_form.ctp:45
 msgid "App.disk_for_private_room help"
 msgstr "Set the limit of the total amount of files which can be stored in each private room."
-
-msgid "Unlimited"
-msgstr ""
 
 #
 # サーバ設定
 #
+#: SystemManager/View/Elements/WebServer/web_server_form.ctp:21
 msgid "Php.memory_limit"
 msgstr "Maximum number of memories"
 
+#: SystemManager/View/Elements/WebServer/web_server_form.ctp:25
 msgid "Session.cookie"
 msgstr "Session cookie name"
 
 #
 # セッションタイムアウト
 #
+#: SystemManager/View/Elements/WebServer/web_server_form.ctp:30
 msgid "Session.ini.[session.cookie_lifetime]"
 msgstr "Time for automatic logout"
 
+#: SystemManager/View/Elements/WebServer/web_server_form.ctp:31
 msgid "Session.ini.[session.cookie_lifetime] help"
 msgstr "If user login while setting the system will not anwers request from the browser,Automatically Logout."
 
+# 下記の項目は、i18nでセットされない
+#: SiteManager/Model/SiteSetting.php:259
+#: @see SiteManager/Model/SiteSetting.php:71
+#: @see SiteManager/Model/SiteSetting.php:72
+#: @see SiteManager/Model/SiteSetting.php:73
+#: @see SystemManager/View/Elements/WebServer/web_server_form.ctp:29
 msgid "%s minutes"
 msgstr ""
 
+# 下記の項目は、i18nでセットされない
+#: SiteManager/Model/SiteSetting.php:259
+#: @see SiteManager/Model/SiteSetting.php:74
+#: @see SystemManager/View/Elements/WebServer/web_server_form.ctp:29
 msgid "%s hour"
 msgstr ""
 
+# 下記の項目は、i18nでセットされない
+#: SiteManager/Model/SiteSetting.php:259
+#: @see SiteManager/Model/SiteSetting.php:75
+#: @see SiteManager/Model/SiteSetting.php:76
+#: @see SiteManager/Model/SiteSetting.php:77
+#: @see SystemManager/View/Elements/WebServer/web_server_form.ctp:29
 msgid "%s hours"
 msgstr ""
 
+# 下記の項目は、i18nでセットされない
+#: SiteManager/Model/SiteSetting.php:259
+#: @see SiteManager/Model/SiteSetting.php:78
+#: @see SystemManager/View/Elements/WebServer/web_server_form.ctp:29
 msgid "%s day"
 msgstr ""
 
+# 下記の項目は、i18nでセットされない
+#: SiteManager/Model/SiteSetting.php:259
+#: @see SiteManager/Model/SiteSetting.php:79
+#: @see SystemManager/View/Elements/WebServer/web_server_form.ctp:29
 msgid "%s days"
 msgstr ""
 
 #
 # プロキシ
 #
-msgid "Proxy server"
-msgstr ""
-
+#: SystemManager/View/Elements/WebServer/proxy_form.ctp:24
 msgid "Proxy.use_proxy"
 msgstr "Use the proxy server"
 
+#: SystemManager/View/Elements/WebServer/proxy_form.ctp:30
 msgid "Proxy.host"
 msgstr "Proxy host"
 
+#: SystemManager/View/Elements/WebServer/proxy_form.ctp:31
 msgid "Proxy.host help"
 msgstr "If you get RSS/ATOM via a proxy server, set the host's name or IP here."
 
+#: SystemManager/View/Elements/WebServer/proxy_form.ctp:36
 msgid "Proxy.port"
 msgstr "Proxy port"
 
+#: SystemManager/View/Elements/WebServer/proxy_form.ctp:37
 msgid "Proxy.port help"
 msgstr "Enter the proxy port number if you useproxies"
 
+#: SystemManager/View/Elements/WebServer/proxy_form.ctp:42
 msgid "Proxy.user"
 msgstr "Proxy user"
 
+#: SystemManager/View/Elements/WebServer/proxy_form.ctp:43
 msgid "Proxy.user help"
 msgstr "If your proxy server needs BASIC authentication, set the user's name. Else, leave blank"
 
+#: SystemManager/View/Elements/WebServer/proxy_form.ctp:48
 msgid "Proxy.pass"
 msgstr "Proxy password"
 
+#: SystemManager/View/Elements/WebServer/proxy_form.ctp:49
 msgid "Proxy.pass help"
 msgstr "If your proxy server needs BASIC authentication, set the password. Else, leave blank"
+
+#: SystemManager/View/WebServer/edit.ctp:25
+msgid "Proxy server"
+msgstr ""
 
 #
 # メール設定
 #
+#: SystemManager/View/Elements/MailServer/mail_server_form.ctp:20
 msgid "Mail.from"
 msgstr "FROM address"
 
+#: SystemManager/View/Elements/MailServer/mail_server_form.ctp:24
 msgid "Mail.from_name"
 msgstr "FROM name"
 
+#: SystemManager/View/Elements/MailServer/mail_server_form.ctp:25
 msgid "Mail.from_name help"
 msgstr "Please input the name which is indicated in the case of mail transmission as the transmission person"
 
+#: SystemManager/View/Elements/MailServer/mail_server_form.ctp:31
 msgid "Mail.messageType"
 msgstr "Mail format"
 
-msgid "HTML"
-msgstr ""
-
-msgid "Plan text"
-msgstr ""
-
+#: SystemManager/View/Elements/MailServer/mail_server_form.ctp:40
 msgid "Mail.transport"
 msgstr "Mail delivery method"
 
+#: SystemManager/View/Elements/MailServer/mail_server_form.ctp:41
 msgid "Mail.transport help"
 msgstr "Please enter the method used to deliver mail. Default seting is \"SMTP\""
 
-msgid "Mail.sendmail"
-msgstr "Path to sendmail"
-
+#: SystemManager/View/Elements/MailServer/mail_server_form.ctp:48
 msgid "Mail.smtp.host"
 msgstr "SMTP host(s)"
 
+#: SystemManager/View/Elements/MailServer/mail_server_form.ctp:49
 msgid "Mail.smtp.host help"
 msgstr "Please enter the host name or IP addresses of SMTP servers."
 
+#: SystemManager/View/Elements/MailServer/mail_server_form.ctp:54
 msgid "Mail.smtp.port"
 msgstr "SMTP port"
 
+#: SystemManager/View/Elements/MailServer/mail_server_form.ctp:55
 msgid "Mail.smtp.port help"
 msgstr "Please enter the port number."
 
+#: SystemManager/View/Elements/MailServer/mail_server_form.ctp:59
 msgid "Mail.smtp.user"
 msgstr "SMTPAuth username"
 
+#: SystemManager/View/Elements/MailServer/mail_server_form.ctp:60
 msgid "Mail.smtp.user help"
 msgstr "If you use the SMTPAuth, please enter."
 
+#: SystemManager/View/Elements/MailServer/mail_server_form.ctp:65
 msgid "Mail.smtp.pass"
 msgstr "SMTPAuth password"
 
+#: SystemManager/View/Elements/MailServer/mail_server_form.ctp:66
 msgid "Mail.smtp.pass help"
 msgstr "If you use the SMTPAuth, please enter."
 
+#: SystemManager/View/Elements/MailServer/mail_server_form.ctp:75
 msgid "Mail.smtp.tls"
 msgstr "Use STARTTLS"
 
+#: SystemManager/View/Elements/MailServer/mail_server_form.ctp:76
 msgid "Mail.smtp.tls help"
 msgstr "If you want to encrypt the e-mail sent in the STARTTLS, please select Yes."
+
+# 下記の項目は、i18nでセットされない
+#: SiteManager/Model/SiteSetting.php:240
+#: @see SiteManager/Model/SiteSetting.php:128
+#: @see SystemManager/View/Elements/MailServer/mail_server_form.ctp:30
+msgid "HTML"
+msgstr ""
+
+# 下記の項目は、i18nでセットされない
+#: SiteManager/Model/SiteSetting.php:240
+#: @see SiteManager/Model/SiteSetting.php:129
+#: @see SystemManager/View/Elements/MailServer/mail_server_form.ctp:30
+msgid "Plan text"
+msgstr ""
 
 #
 # セキュリティ設定
 #
+#: SiteManager/Model/Behavior/IpAddressManagerBehavior.php:47
+msgid "Contains the current IP address. Please excluded from the list."
+msgstr ""
+
+#: SiteManager/Model/Behavior/IpAddressManagerBehavior.php:85
+msgid "It does not include the current IP address. Please add to the list."
+msgstr ""
+
+#: SystemManager/View/Elements/SecuritySettings/upload_allow_extension_form.ctp:17
 msgid "Upload.allow_extension"
 msgstr "Permission setting of extension of uploading file"
 
+#: SystemManager/View/Elements/SecuritySettings/upload_allow_extension_form.ctp:18
 msgid "Upload.allow_extension help"
 msgstr "When the plural extensions is specified, each extensions is delimited by `,` ."
 
+#: SystemManager/View/Elements/SecuritySettings/deny_ip_move_form.ctp:20
 msgid "Security.deny_ip_move"
 msgstr "Base authority to prohibit IP change"
 
+#: SystemManager/View/Elements/SecuritySettings/deny_ip_move_form.ctp:21
 msgid "Security.deny_ip_move help"
 msgstr "You can specify the member authority to prohibit access from different IP address during the session."
 "For the administrator, it is recommended that you to ON. By prohibiting the IP change, the risk of session hijacking is reduced."
 "However, in the environment you are using DHCP, because the IP address would change, you will not be able to log in and not to OFF."
 
+#: SystemManager/View/Elements/SecuritySettings/bad_ips_form.ctp:23
 msgid "Security.enable_bad_ips"
 msgstr "Use access refusal IP address"
 
+#: SystemManager/View/Elements/SecuritySettings/bad_ips_form.ctp:30
 msgid "Security.bad_ips"
 msgstr "Access refusal IP address"
 
-msgid "Contains the current IP address. Please excluded from the list."
-msgstr ""
-
-msgid "If you enter the wrong IP address, You will not be able to access the web site. Please enter did on each confirmed well."
-msgstr ""
-
+#: SystemManager/View/Elements/SecuritySettings/bad_ips_form.ctp:31
 msgid "Security.bad_ips help"
 msgstr "Enter in the IPv4 format. Range specified is also possible. (`192.168.1.123`, `192.168.1.0/24` format)"
 "If you want to specify more than one, `|` Please enter the delimiter."
 
+#: SystemManager/View/Elements/SecuritySettings/bad_ips_form.ctp:33
+msgid "If you enter the wrong IP address, You will not be able to access the web site. Please enter did on each confirmed well."
+msgstr ""
+
+#: SystemManager/View/Elements/SecuritySettings/allow_system_plugin_ips_form.ctp:33
+msgid "If you enter the wrong IP address, you will not be able to transition to the management screen. Please enter did on each confirmed well."
+msgstr ""
+
+#: SystemManager/View/Elements/SecuritySettings/allow_system_plugin_ips_form.ctp:23
 msgid "Security.enable_allow_system_plugin_ips"
 msgstr "Use to control the access of the management screen in the IP address"
 
+#: SystemManager/View/Elements/SecuritySettings/allow_system_plugin_ips_form.ctp:30
 msgid "Security.allow_system_plugin_ips"
 msgstr "IP address to allow access"
 
-msgid "It does not include the current IP address. Please add to the list."
-msgstr ""
-
+#: SystemManager/View/Elements/SecuritySettings/allow_system_plugin_ips_form.ctp:31
 msgid "Security.allow_system_plugin_ips help"
 msgstr "Enter in the IPv4 format. Range specified is also possible. (`192.168.1.123`, `192.168.1.0/24` format)"
 "If you want to specify more than one, `|` Please enter the delimiter."
 
-msgid "If you enter the wrong IP address, you will not be able to transition to the management screen. Please enter did on each confirmed well."
-msgstr ""
-
 #
 # 開発者向け
 #
+#: SystemManager/View/Elements/Developer/developer_form.ctp:25
+msgid "Only for this session"
+msgstr ""
+
+#: SystemManager/View/Elements/Developer/developer_form.ctp:26
+msgid "Save the setting in the DB"
+msgstr ""
+
+#: SystemManager/View/Elements/Developer/developer_form.ctp:36
 msgid "debug"
 msgstr "Output debug level"
 
-msgid "0: No error messages, errors, or warnings shown. Flash messages redirect."
-msgstr ""
-
-msgid "1: Errors and warnings shown, model caches refreshed, flash messages halted."
-msgstr ""
-
-msgid "2: As in 1, but also with full debug messages and SQL output."
-msgstr ""
-
+#: SystemManager/View/Elements/Developer/developer_form.ctp:37
 msgid "debug help"
 msgstr "0: No error messages, errors, or warnings shown. Flash messages redirect.<br>"
 "1: Errors and warnings shown, model caches refreshed, flash messages halted.<br>"
 "2: As in 1, but also with full debug messages and SQL output."
 
-msgid "Only for this session"
+# 下記の項目は、i18nでセットされない
+#: SiteManager/Model/SiteSetting.php:248
+#: @see SiteManager/Model/SiteSetting.php:196
+#: SystemManager/View/Elements/Developer/developer_form.ctp:35
+msgid "0: No error messages, errors, or warnings shown. Flash messages redirect."
 msgstr ""
 
-msgid "Save the setting in the DB"
+# 下記の項目は、i18nでセットされない
+#: SiteManager/Model/SiteSetting.php:248
+#: @see SiteManager/Model/SiteSetting.php:199
+#: SystemManager/View/Elements/Developer/developer_form.ctp:35
+msgid "1: Errors and warnings shown, model caches refreshed, flash messages halted."
+msgstr ""
+
+# 下記の項目は、i18nでセットされない
+#: SiteManager/Model/SiteSetting.php:248
+#: @see SiteManager/Model/SiteSetting.php:202
+#: SystemManager/View/Elements/Developer/developer_form.ctp:35
+msgid "2: As in 1, but also with full debug messages and SQL output."
 msgstr ""
