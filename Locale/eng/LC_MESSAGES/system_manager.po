@@ -234,6 +234,27 @@ msgstr "Use STARTTLS"
 msgid "Mail.smtp.tls help"
 msgstr "If you want to encrypt the e-mail sent in the STARTTLS, please select Yes."
 
+msgid "Can send mail or test send"
+msgstr "Can send mail or test send"
+
+msgid "When sending mail or sending test e-mail, please press the [Send] button."
+msgstr "When sending mail or sending test e-mail, please press the [Send] button."
+
+msgid "To mail address"
+msgstr "To mail address"
+
+msgid "Mail title"
+msgstr "Mail title"
+
+msgid "Mail body"
+msgstr "Mail body"
+
+msgid "Send"
+msgstr "Send"
+
+msgid "Successfully mail send."
+msgstr "Successfully mail send."
+
 # 下記の項目は、i18nでセットされない
 #: SiteManager/Model/SiteSetting.php:240
 #: @see SiteManager/Model/SiteSetting.php:128
