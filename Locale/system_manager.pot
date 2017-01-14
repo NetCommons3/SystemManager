@@ -234,6 +234,9 @@ msgstr ""
 msgid "Mail.smtp.tls help"
 msgstr ""
 
+msgid "Can send mail or test send"
+msgstr ""
+
 # 下記の項目は、i18nでセットされない
 #: SiteManager/Model/SiteSetting.php:240
 #: @see SiteManager/Model/SiteSetting.php:128

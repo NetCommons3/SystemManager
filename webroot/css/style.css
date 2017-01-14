@@ -9,3 +9,7 @@
 .system-manager-developer .radio-inline:first-child {
 	padding-left: 0px;
 }
+
+.plugin-system-manager .system-manager-check-trial .checkbox.checkbox-inline {
+	padding-left: 0px;
+}
