@@ -237,6 +237,24 @@ msgstr "STARTTLSでメール送信を暗号化したい場合、はいを選択�
 msgid "Can send mail or test send"
 msgstr "メールを送れるかテスト送信する"
 
+msgid "When sending mail or sending test e-mail, please press the [Send] button."
+msgstr "メールが送れるかテスト送信する場合、[送信]ボタンを押してください。"
+
+msgid "To mail address"
+msgstr "宛先(To)"
+
+msgid "Mail title"
+msgstr "件名"
+
+msgid "Mail body"
+msgstr "本文"
+
+msgid "Send"
+msgstr "送信"
+
+msgid "Successfully mail send."
+msgstr "メール送信しました。"
+
 # 下記の項目は、i18nでセットされない
 #: SiteManager/Model/SiteSetting.php:240
 #: @see SiteManager/Model/SiteSetting.php:128

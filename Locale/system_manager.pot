@@ -237,6 +237,24 @@ msgstr ""
 msgid "Can send mail or test send"
 msgstr ""
 
+msgid "When sending mail or sending test e-mail, please press the [Send] button."
+msgstr ""
+
+msgid "To mail address"
+msgstr ""
+
+msgid "Mail title"
+msgstr ""
+
+msgid "Mail body"
+msgstr ""
+
+msgid "Send"
+msgstr ""
+
+msgid "Successfully mail send."
+msgstr ""
+
 # 下記の項目は、i18nでセットされない
 #: SiteManager/Model/SiteSetting.php:240
 #: @see SiteManager/Model/SiteSetting.php:128
