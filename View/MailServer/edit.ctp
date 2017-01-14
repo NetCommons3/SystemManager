@@ -10,7 +10,10 @@
  */
 ?>
 
-<?php echo $this->SystemManager->tabs(); ?>
+<?php
+echo $this->NetCommonsHtml->css('/system_manager/css/style.css');
+echo $this->SystemManager->tabs();
+?>
 
 <?php echo $this->NetCommonsForm->create('SiteSetting', array(
 		'ng-controller' => 'SystemManager',
@@ -29,6 +32,14 @@
 					__d('net_commons', 'OK'),
 					'#', array('ng-click' => 'cancel()')
 				); ?>
+
+			<span class="well well-sm btn-workflow system-manager-check-trial">
+				<?php echo $this->NetCommonsForm->checkbox('_SystemManager.trial', array(
+					'label' => __d('system_manager', 'Can send mail or test send'),
+					'checked' => false,
+					'inline' => true,
+				)); ?>
+			</span>
 		</div>
 	</div>
 
