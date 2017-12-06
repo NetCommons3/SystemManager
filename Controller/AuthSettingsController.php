@@ -84,36 +84,56 @@ class AuthSettingsController extends SystemManagerAppController {
  * @return void
  */
 	public function edit() {
+		// [まだ] 外部プラグインでeditを動かしたい
 		//$this->_prepare();
+		$tagId = strtr(Inflector::underscore($this->_authenticators[0]), '_', '-');
 
 		//リクエストセット
 		if ($this->request->is('post')) {
-			$this->set('activeAuthTab', Hash::get($this->request->data['SiteSetting'], 'activeAuthTab', 'auth-general'));
+			// [まだ] 必須チェック
+			//$this->set('activeAuthTab', Hash::get($this->request->data['SiteSetting'], 'activeAuthTab', 'auth-general'));
+			$this->set('activeAuthTab', Hash::get($this->request->data['SiteSetting'], 'activeAuthTab', $tagId));
 
 			// * 自動ログアウトする時間(gc_maxlifetime)
 			//$this->request->data['SiteSetting']['Session.ini.session.gc_maxlifetime']['0']['value'] =
 			//				$this->request->data['SiteSetting']['Session.ini.session.cookie_lifetime']['0']['value'];
 
+			// [まだ] 保存すると空の1行が余計に登録される
 			//登録処理
-			//$this->SiteManager->saveData();
+			$this->SiteManager->saveData();
 
 		} else {
 			//var_dump($this->request->query);
-			$tagId = strtr(Inflector::underscore($this->_authenticators[0]), '_', '-');
 			//$this->set('activeAuthTab', Hash::get($this->request->query, 'activeAuthTab', 'auth-general'));
 			$this->set('activeAuthTab', Hash::get($this->request->query, 'activeAuthTab', $tagId));
 
 			// 値を設定
-			//			$this->request->data['SiteSetting'] = $this->SiteSetting->getSiteSettingForEdit(
-			//				array('SiteSetting.key' => array(
-			//					// * 自動ログアウトする時間(cookie_lifetime)(6時間)
-			//					'Session.ini.session.cookie_lifetime',
-			//					// * 自動ログアウトする時間(gc_maxlifetime)(6時間)
-			//					'Session.ini.session.gc_maxlifetime',
-			//					// * SSLを有効にする
-			//					'Auth.use_ssl',
-			//				)
-			//			));
+			$this->request->data['SiteSetting'] = $this->SiteSetting->getSiteSettingForEdit(
+				array('SiteSetting.key' => array(
+					'App.default_timezone',
+					//ログイン設定
+					// * shibbolethログイン
+					// ** ウェブサーバに設定したShibboleth認証のロケーション
+					'AuthShibboleth.auth_type_shibbloth_location',
+					// ** IdPによる個人識別番号
+					'AuthShibboleth.idp_userid',
+					// ** 学認 Embedded DS
+					// *** WAYF URL
+					'AuthShibboleth.wayf_URL',
+					// *** エンティティID
+					'AuthShibboleth.wayf_sp_entityID',
+					// *** Shibboleth SPのハンドラURL
+					'AuthShibboleth.wayf_sp_handlerURL',
+					// *** 認証後に開くURL
+					'AuthShibboleth.wayf_return_url',
+					// *** ログインしたままにする にチェックを入れて操作させない
+					'AuthShibboleth.wayf_force_remember_for_session',
+					// *** 表示IdP絞り込みDiscpFeed URL
+					'AuthShibboleth.wayf_discofeed_url',
+					// *** 他のフェデレーションのIdPを追加する
+					'AuthShibboleth.wayf_additional_idps',
+				)
+			));
 		}
 	}
 
