@@ -40,6 +40,10 @@ class SystemManagerHelper extends AppHelper {
 			'controller' => 'system_manager',
 			'action' => 'edit',
 		),
+		'auth_settings' => array(
+			'controller' => 'auth_settings',
+			'action' => 'edit',
+		),
 		'web_server' => array(
 			'controller' => 'web_server',
 			'action' => 'edit',
@@ -96,6 +100,11 @@ class SystemManagerHelper extends AppHelper {
 	public function tabs($active = null) {
 		if (! isset($active)) {
 			$active = $this->_View->request->params['controller'];
+		}
+
+		// 外部認証プラグイン(AuthXXX)がなければ、ログイン設定タブを除外
+		if (! $this->__isAuthTab()) {
+			unset($this->_tabs['auth_settings']);
 		}
 
 		$output = '';
@@ -163,4 +172,24 @@ class SystemManagerHelper extends AppHelper {
 		return $output;
 	}
 
+/**
+ * Authタブに表示するAuthGeneral以外の外部プラグイン(AuthXXX)があるか
+ *
+ * @return string HTML
+ */
+	private function __isAuthTab() {
+		$plugins = App::objects('plugins');
+
+		foreach ($plugins as $plugin) {
+			$matches = array();
+			if (! preg_match('/^Auth([A-Z0-9_][\w]+)/', $plugin, $matches)) {
+				continue;
+			}
+			if ($plugin === 'AuthGeneral') {
+				continue;
+			}
+			return true;
+		}
+		return false;
+	}
 }
