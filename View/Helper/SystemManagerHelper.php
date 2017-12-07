@@ -10,6 +10,7 @@
  */
 
 App::uses('AppHelper', 'View/Helper');
+App::uses('AuthenticatorPlugin', 'Auth.Utility');
 
 /**
  * システム管理ヘルパー
@@ -103,7 +104,7 @@ class SystemManagerHelper extends AppHelper {
 		}
 
 		// 外部認証プラグイン(AuthXXX)がなければ、ログイン設定タブを除外
-		if (! $this->__isAuthTab()) {
+		if (! AuthenticatorPlugin::getExternals()) {
 			unset($this->_tabs['auth_settings']);
 		}
 
@@ -172,24 +173,4 @@ class SystemManagerHelper extends AppHelper {
 		return $output;
 	}
 
-/**
- * Authタブに表示するAuthGeneral以外の外部プラグイン(AuthXXX)があるか
- *
- * @return string HTML
- */
-	private function __isAuthTab() {
-		$plugins = App::objects('plugins');
-
-		foreach ($plugins as $plugin) {
-			$matches = array();
-			if (! preg_match('/^Auth([A-Z0-9_][\w]+)/', $plugin, $matches)) {
-				continue;
-			}
-			if ($plugin === 'AuthGeneral') {
-				continue;
-			}
-			return true;
-		}
-		return false;
-	}
 }

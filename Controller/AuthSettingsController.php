@@ -11,6 +11,7 @@
  */
 
 App::uses('SystemManagerAppController', 'SystemManager.Controller');
+App::uses('AuthenticatorPlugin', 'Auth.Utility');
 
 /**
  * システム管理【ログイン設定】
@@ -21,11 +22,6 @@ App::uses('SystemManagerAppController', 'SystemManager.Controller');
  * @package NetCommons\SystemManager\Controller
  */
 class AuthSettingsController extends SystemManagerAppController {
-
-/**
- * @var array authenticators
- */
-	protected $_authenticators = array();
 
 /**
  * use model
@@ -43,39 +39,10 @@ class AuthSettingsController extends SystemManagerAppController {
  * @see SystemManagerHelper::tabs()
  **/
 	public function beforeFilter() {
-		// SystemManagerHelper::tabs() で、外部認証プラグイン（AuthXXXX）がないと、ログイン設定タブを表示しないため、
-		// このコントローラに来てる時点で、$this->_authenticatorsには外部認証プラグインのプラグイン名が１つ以上ある
-		$this->_authenticators = $this->_getAuthenticators();
-		//$this->set('authenticators', $authenticators);
-
 		$authTabs = $this->_getAuthTabs();
 		$this->set('authTabs', $authTabs);
 
 		parent::beforeFilter();
-	}
-
-/**
- * Return available authenticators
- *
- * @return array authenticators
- * @see AuthAppController::_getAuthenticators() からコピー
- */
-	protected function _getAuthenticators() {
-		$authenticators = array();
-		$plugins = App::objects('plugins');
-		foreach ($plugins as $plugin) {
-			// @see https://regexper.com/#%5EAuth(%5BA-Z0-9_%5D%5B%5Cw%5D%2B)
-			if (preg_match('/^Auth([A-Z0-9_][\w]+)/', $plugin)) {
-				if ($plugin === 'AuthGeneral') {
-					// AuthGeneralは含めない
-					continue;
-				}
-				//$authenticators[] = Inflector::underscore($plugin);
-				$authenticators[] = $plugin;
-			}
-		}
-
-		return $authenticators;
 	}
 
 /**
@@ -86,11 +53,12 @@ class AuthSettingsController extends SystemManagerAppController {
 	public function edit() {
 		// [まだ] 外部プラグインでeditを動かしたい
 		//$this->_prepare();
-		$tagId = strtr(Inflector::underscore($this->_authenticators[0]), '_', '-');
+		$authExternalPlugins = AuthenticatorPlugin::getExternals();
+		// [まだ] $tagIdは、初期表示は[0], 更新したらそのAuthXXXXを指定したい
+		$tagId = strtr(Inflector::underscore($authExternalPlugins[0]), '_', '-');
 
 		//リクエストセット
 		if ($this->request->is('post')) {
-			// [まだ] 必須チェック
 			//$this->set('activeAuthTab', Hash::get($this->request->data['SiteSetting'], 'activeAuthTab', 'auth-general'));
 			$this->set('activeAuthTab',
 				Hash::get($this->request->data['SiteSetting'], 'activeAuthTab', $tagId));
@@ -111,12 +79,11 @@ class AuthSettingsController extends SystemManagerAppController {
 			// 値を設定
 			$this->request->data['SiteSetting'] = $this->SiteSetting->getSiteSettingForEdit(
 				array('SiteSetting.key' => array(
-					'App.default_timezone',
 					//ログイン設定
 					// * shibbolethログイン
 					// ** ウェブサーバに設定したShibboleth認証のロケーション
 					'AuthShibboleth.auth_type_shibbloth_location',
-					// ** IdPによる個人識別番号
+					// ** IdPによる個人識別番号に利用する項目
 					'AuthShibboleth.idp_userid',
 					// ** 学認 Embedded DS
 					// *** WAYF URL
@@ -129,7 +96,7 @@ class AuthSettingsController extends SystemManagerAppController {
 					'AuthShibboleth.wayf_return_url',
 					// *** ログインしたままにする にチェックを入れて操作させない
 					'AuthShibboleth.wayf_force_remember_for_session',
-					// *** 表示IdP絞り込みDiscpFeed URL
+					// *** DiscpFeed URL
 					'AuthShibboleth.wayf_discofeed_url',
 					// *** 他のフェデレーションのIdPを追加する
 					'AuthShibboleth.wayf_additional_idps',
@@ -139,49 +106,24 @@ class AuthSettingsController extends SystemManagerAppController {
 	}
 
 /**
- * 前処理
- * 他の認証の設定画面を組み込みについては、後で考える
+ * 外部認証プラグインのタブを取得
  *
  * @return array
  */
 	protected function _getAuthTabs() {
 		//protected function _prepare() {
 		$tabs = array();
+		$authExternalPlugins = AuthenticatorPlugin::getExternals();
 
-		//$plugins = App::objects('plugins');
-
-		//foreach ($plugins as $plugin) {
-		foreach ($this->_authenticators as $plugin) {
-			//			$matches = array();
-			//			// @see https://regexper.com/#%5EAuth(%5BA-Z0-9_%5D%5B%5Cw%5D%2B)
-			//			if (! preg_match('/^Auth([A-Z0-9_][\w]+)/', $plugin, $matches)) {
-			//				continue;
-			//			}
-			//			if ($plugin === 'AuthGeneral') {
-			//				// AuthGeneralは含めない
-			//				//continue;
-			//			}
-
+		foreach ($authExternalPlugins as $plugin) {
 			//elementを読み込み設定
 			$tagId = strtr(Inflector::underscore($plugin), '_', '-');
-
-			//						if ($plugin === 'AuthGeneral') {
-			//							$tabs[$tagId] = array(
-			//								'label' => __d('system_manager', 'Auth common setting'),
-			//								'element' => 'AuthSettings/auth_form'
-			//							);
-			//						}
-			// $plugin キャメル
-			//			var_dump($tagId, $plugin, Inflector::underscore($plugin));
-			//			var_dump(Inflector::humanize(Inflector::underscore($plugin)), Inflector::camelize($plugin));
-
 			$tabs[$tagId] = array(
 				'label' => __d(Inflector::underscore($plugin), $plugin . '.setting.label'),
 				'element' => $plugin . '.setting'
 			);
 		}
 		return $tabs;
-		//$this->set('authTabs', $tabs);
 	}
 
 }
