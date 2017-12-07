@@ -92,7 +92,8 @@ class AuthSettingsController extends SystemManagerAppController {
 		if ($this->request->is('post')) {
 			// [まだ] 必須チェック
 			//$this->set('activeAuthTab', Hash::get($this->request->data['SiteSetting'], 'activeAuthTab', 'auth-general'));
-			$this->set('activeAuthTab', Hash::get($this->request->data['SiteSetting'], 'activeAuthTab', $tagId));
+			$this->set('activeAuthTab',
+				Hash::get($this->request->data['SiteSetting'], 'activeAuthTab', $tagId));
 
 			// * 自動ログアウトする時間(gc_maxlifetime)
 			//$this->request->data['SiteSetting']['Session.ini.session.gc_maxlifetime']['0']['value'] =
