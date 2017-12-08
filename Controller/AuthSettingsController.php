@@ -109,6 +109,9 @@ class AuthSettingsController extends SystemManagerAppController {
 		// > コンポーネントを動的にロードした場合、初期化メソッドが実行されないことを覚えておいて下さい。 このメソッドで読込んだ場合、ロード後に手動で実行する必要があります。
 		$this->$pluginComponent->initialize($this);
 
+		// activeAuthTabを除去
+		$this->request->data = Hash::remove($this->request->data, 'SiteSetting.activeAuthTab');
+
 		// $this->AuthXXXXSetting->edit()
 		$this->$pluginComponent->edit();
 	}
