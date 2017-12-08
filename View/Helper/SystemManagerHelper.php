@@ -40,6 +40,10 @@ class SystemManagerHelper extends AppHelper {
 			'controller' => 'system_manager',
 			'action' => 'edit',
 		),
+		'auth_settings' => array(
+			'controller' => 'auth_settings',
+			'action' => 'edit',
+		),
 		'web_server' => array(
 			'controller' => 'web_server',
 			'action' => 'edit',
@@ -96,6 +100,11 @@ class SystemManagerHelper extends AppHelper {
 	public function tabs($active = null) {
 		if (! isset($active)) {
 			$active = $this->_View->request->params['controller'];
+		}
+
+		// 外部認証プラグイン(AuthXXX)がなければ、ログイン設定タブを除外
+		if (! Hash::get($this->_View->viewVars, 'useAuthSettingTab')) {
+			unset($this->_tabs['auth_settings']);
 		}
 
 		$output = '';

@@ -10,6 +10,7 @@
     },
     "require": {
         "cakedc/migrations":            "~2.2",
+        "netcommons/auth":              "@dev",
         "netcommons/control-panel":     "@dev",
         "netcommons/net-commons":       "@dev",
         "netcommons/plugin-manager":    "@dev",
