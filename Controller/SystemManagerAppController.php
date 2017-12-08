@@ -25,10 +25,11 @@ class SystemManagerAppController extends AppController {
  * @var array
  */
 	public $components = array(
+		'Auth.AuthPlugin',
 		'ControlPanel.ControlPanelLayout',
 		'M17n.SwitchLanguage',
 		'NetCommons.Permission' => array(
-			'type' => PermissionComponent::CHECK_TYEP_SYSTEM_PLUGIN,
+			'type' => PermissionComponent::CHECK_TYPE_SYSTEM_PLUGIN,
 			'allow' => array()
 		),
 		'Security',
@@ -43,4 +44,21 @@ class SystemManagerAppController extends AppController {
 	public $helpers = array(
 		'SystemManager.SystemManager',
 	);
+
+/**
+ * beforeFilter
+ *
+ * @return void
+ * @see SystemManagerHelper::tabs()
+ **/
+	public function beforeFilter() {
+		// 外部認証プラグイン(AuthXXX)があれば、ログイン設定タブを表示
+		if ($this->AuthPlugin->getExternals()) {
+			$this->set('useAuthSettingTab', true);
+		} else {
+			$this->set('useAuthSettingTab', false);
+		}
+
+		parent::beforeFilter();
+	}
 }

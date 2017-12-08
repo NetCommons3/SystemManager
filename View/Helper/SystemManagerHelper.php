@@ -10,7 +10,6 @@
  */
 
 App::uses('AppHelper', 'View/Helper');
-App::uses('AuthenticatorPlugin', 'Auth.Utility');
 
 /**
  * システム管理ヘルパー
@@ -104,7 +103,7 @@ class SystemManagerHelper extends AppHelper {
 		}
 
 		// 外部認証プラグイン(AuthXXX)がなければ、ログイン設定タブを除外
-		if (! AuthenticatorPlugin::getExternals()) {
+		if (! Hash::get($this->_View->viewVars, 'useAuthSettingTab')) {
 			unset($this->_tabs['auth_settings']);
 		}
 

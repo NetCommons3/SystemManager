@@ -11,7 +11,6 @@
  */
 
 App::uses('SystemManagerAppController', 'SystemManager.Controller');
-App::uses('AuthenticatorPlugin', 'Auth.Utility');
 
 /**
  * システム管理【ログイン設定】
@@ -33,76 +32,25 @@ class AuthSettingsController extends SystemManagerAppController {
 	);
 
 /**
+ * Other components
+ *
+ * @var array
+ */
+	public $components = array(
+		'Auth.AuthPlugin',
+	);
+
+/**
  * beforeFilter
  *
  * @return void
  * @see SystemManagerHelper::tabs()
  **/
 	public function beforeFilter() {
-		$authTabs = $this->_getAuthTabs();
-		$this->set('authTabs', $authTabs);
+		$this->set('authTabs', $this->_getAuthTabs());
+		$this->set('activeAuthTab', $this->_getActiveAuthTab());
 
 		parent::beforeFilter();
-	}
-
-/**
- * edit
- *
- * @return void
- */
-	public function edit() {
-		// [まだ] 外部プラグインでeditを動かしたい
-		//$this->_prepare();
-		$authExternalPlugins = AuthenticatorPlugin::getExternals();
-		// [まだ] $tagIdは、初期表示は[0], 更新したらそのAuthXXXXを指定したい
-		$tagId = strtr(Inflector::underscore($authExternalPlugins[0]), '_', '-');
-
-		//リクエストセット
-		if ($this->request->is('post')) {
-			//$this->set('activeAuthTab', Hash::get($this->request->data['SiteSetting'], 'activeAuthTab', 'auth-general'));
-			$this->set('activeAuthTab',
-				Hash::get($this->request->data['SiteSetting'], 'activeAuthTab', $tagId));
-
-			// * 自動ログアウトする時間(gc_maxlifetime)
-			//$this->request->data['SiteSetting']['Session.ini.session.gc_maxlifetime']['0']['value'] =
-			//				$this->request->data['SiteSetting']['Session.ini.session.cookie_lifetime']['0']['value'];
-
-			// [まだ] 保存すると空の1行が余計に登録される
-			//登録処理
-			$this->SiteManager->saveData();
-
-		} else {
-			//var_dump($this->request->query);
-			//$this->set('activeAuthTab', Hash::get($this->request->query, 'activeAuthTab', 'auth-general'));
-			$this->set('activeAuthTab', Hash::get($this->request->query, 'activeAuthTab', $tagId));
-
-			// 値を設定
-			$this->request->data['SiteSetting'] = $this->SiteSetting->getSiteSettingForEdit(
-				array('SiteSetting.key' => array(
-					//ログイン設定
-					// * shibbolethログイン
-					// ** ウェブサーバに設定したShibboleth認証のロケーション
-					'AuthShibboleth.auth_type_shibbloth_location',
-					// ** IdPによる個人識別番号に利用する項目
-					'AuthShibboleth.idp_userid',
-					// ** 学認 Embedded DS
-					// *** WAYF URL
-					'AuthShibboleth.wayf_URL',
-					// *** エンティティID
-					'AuthShibboleth.wayf_sp_entityID',
-					// *** Shibboleth SPのハンドラURL
-					'AuthShibboleth.wayf_sp_handlerURL',
-					// *** 認証後に開くURL
-					'AuthShibboleth.wayf_return_url',
-					// *** ログインしたままにする にチェックを入れて操作させない
-					'AuthShibboleth.wayf_force_remember_for_session',
-					// *** DiscpFeed URL
-					'AuthShibboleth.wayf_discofeed_url',
-					// *** 他のフェデレーションのIdPを追加する
-					'AuthShibboleth.wayf_additional_idps',
-				)
-			));
-		}
 	}
 
 /**
@@ -111,9 +59,8 @@ class AuthSettingsController extends SystemManagerAppController {
  * @return array
  */
 	protected function _getAuthTabs() {
-		//protected function _prepare() {
 		$tabs = array();
-		$authExternalPlugins = AuthenticatorPlugin::getExternals();
+		$authExternalPlugins = $this->AuthPlugin->getExternals();
 
 		foreach ($authExternalPlugins as $plugin) {
 			//elementを読み込み設定
@@ -124,6 +71,46 @@ class AuthSettingsController extends SystemManagerAppController {
 			);
 		}
 		return $tabs;
+	}
+
+/**
+ * get active auth tab
+ *
+ * @return string
+ */
+	protected function _getActiveAuthTab() {
+		$authExternalPlugins = $this->AuthPlugin->getExternals();
+		$initTagId = strtr(Inflector::underscore($authExternalPlugins[0]), '_', '-');
+
+		if ($this->request->is('post')) {
+			$activeAuthTab = Hash::get($this->request->data['SiteSetting'], 'activeAuthTab', $initTagId);
+		} else {
+			$activeAuthTab = Hash::get($this->request->query, 'activeAuthTab', $initTagId);
+		}
+		return $activeAuthTab;
+	}
+
+/**
+ * edit
+ *
+ * @return void
+ */
+	public function edit() {
+		$plugin = $this->_getActiveAuthTab();
+		// プラグイン名(キャメル)に変更
+		$plugin = strtr($plugin, '-', '_');
+		$plugin = Inflector::camelize($plugin);
+		// AuthXXXX.AuthXXXXSetting
+		$pluginComponent = $plugin . '.' . $plugin . 'Setting';
+
+		// コンポーネントの動的ロード
+		$this->$pluginComponent = $this->Components->load($pluginComponent);
+		// @see https://book.cakephp.org/2.0/ja/controllers/components.html#id4
+		// > コンポーネントを動的にロードした場合、初期化メソッドが実行されないことを覚えておいて下さい。 このメソッドで読込んだ場合、ロード後に手動で実行する必要があります。
+		$this->$pluginComponent->initialize($this);
+
+		// $this->AuthXXXXSetting->edit()
+		$this->$pluginComponent->edit();
 	}
 
 }
