@@ -96,24 +96,26 @@ class AuthSettingsController extends SystemManagerAppController {
  * @return void
  */
 	public function edit() {
-		$plugin = $this->_getActiveAuthTab();
-		// プラグイン名(キャメル)に変更
-		$plugin = strtr($plugin, '-', '_');
-		$plugin = Inflector::camelize($plugin);
-		// AuthXXXX.AuthXXXXSetting
-		$pluginComponent = $plugin . '.' . $plugin . 'Setting';
-
-		// コンポーネントの動的ロード
-		$this->$pluginComponent = $this->Components->load($pluginComponent);
-		// @see https://book.cakephp.org/2.0/ja/controllers/components.html#id4
-		// > コンポーネントを動的にロードした場合、初期化メソッドが実行されないことを覚えておいて下さい。 このメソッドで読込んだ場合、ロード後に手動で実行する必要があります。
-		$this->$pluginComponent->initialize($this);
-
 		// activeAuthTabを除去
 		$this->request->data = Hash::remove($this->request->data, 'SiteSetting.activeAuthTab');
 
-		// $this->AuthXXXXSetting->edit()
-		$this->$pluginComponent->edit();
+		$authExternalPlugins = $this->AuthPlugin->getExternals();
+		foreach ($authExternalPlugins as $plugin) {
+			// プラグイン名(キャメル)に変更
+			$plugin = strtr($plugin, '-', '_');
+			$plugin = Inflector::camelize($plugin);
+			// AuthXXXX.AuthXXXXSetting
+			$pluginComponent = $plugin . '.' . $plugin . 'Setting';
+
+			// コンポーネントの動的ロード
+			$this->$pluginComponent = $this->Components->load($pluginComponent);
+			// @see https://book.cakephp.org/2.0/ja/controllers/components.html#id4
+			// > コンポーネントを動的にロードした場合、初期化メソッドが実行されないことを覚えておいて下さい。 このメソッドで読込んだ場合、ロード後に手動で実行する必要があります。
+			$this->$pluginComponent->initialize($this);
+
+			// $this->AuthXXXXSetting->edit()
+			$this->$pluginComponent->edit();
+		}
 	}
 
 }

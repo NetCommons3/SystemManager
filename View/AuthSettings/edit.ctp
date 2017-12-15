@@ -37,7 +37,6 @@
 					</div>
 				<?php endforeach; ?>
 			</div>
-
 		</div>
 
 		<div class="panel-footer text-center">
