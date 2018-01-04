@@ -36,6 +36,9 @@ msgstr "Security setting"
 msgid "Tab.developer"
 msgstr "Developer"
 
+msgid "Tab.auth_settings"
+msgstr "Login setting"
+
 #
 # 一般設定
 #
