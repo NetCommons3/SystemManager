@@ -48,7 +48,7 @@ class SystemManagerController extends SystemManagerAppController {
 				)
 			));
 
-			$spaces = $this->Space->find('all', array(
+			$spaces = $this->Space->cacheFindQuery('all', array(
 				'recursive' => -1,
 				'conditions' => array('id' => [Space::PRIVATE_SPACE_ID, Space::COMMUNITY_SPACE_ID]),
 			));
