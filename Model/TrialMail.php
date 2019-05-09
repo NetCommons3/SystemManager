@@ -49,7 +49,7 @@ class TrialMail extends SystemManagerAppModel {
  * @see Model::save()
  */
 	public function beforeValidate($options = array()) {
-		$this->validate = Hash::merge($this->validate, array(
+		$this->validate = ValidateMerge::merge($this->validate, array(
 			'to_address' => array(
 				'email' => array(
 					'rule' => array('email'),
