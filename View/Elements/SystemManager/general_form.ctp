@@ -31,6 +31,13 @@ foreach ($SiteSetting->diskSpace as $size) {
 		'label' => __d('system_manager', 'App.default_timezone'),
 	)); ?>
 
+	<?php echo $this->SystemManager->inputCommon('SiteSetting', 'App.disk_for_public_room', array(
+		'type' => 'select',
+		'options' => $diskSpace,
+		'label' => __d('system_manager', 'App.disk_for_public_room'),
+		'help' => __d('system_manager', 'App.disk_for_public_room help'),
+	)); ?>
+
 	<?php echo $this->SystemManager->inputCommon('SiteSetting', 'App.disk_for_group_room', array(
 		'type' => 'select',
 		'options' => $diskSpace,

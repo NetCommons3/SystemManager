@@ -50,6 +50,12 @@ msgstr ""
 msgid "App.default_timezone"
 msgstr "Default timezone"
 
+msgid "App.disk_for_public_room"
+msgstr "Disk space for public room"
+
+msgid "App.disk_for_public_room help"
+msgstr "Set the limit of the total amount of files which can be stored in each public room."
+
 #: SystemManager/View/Elements/SystemManager/general_form.ctp:37
 msgid "App.disk_for_group_room"
 msgstr "Disk space for community room"
