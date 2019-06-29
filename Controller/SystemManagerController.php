@@ -48,10 +48,19 @@ class SystemManagerController extends SystemManagerAppController {
 				)
 			));
 
-			$spaces = $this->Space->cacheFindQuery('all', array(
-				'recursive' => -1,
-				'conditions' => array('id' => [Space::PRIVATE_SPACE_ID, Space::COMMUNITY_SPACE_ID, Space::PUBLIC_SPACE_ID]),
-			));
+			$spaces = $this->Space->cacheFindQuery(
+				'all',
+				[
+					'recursive' => -1,
+					'conditions' => [
+						'id' => [
+							Space::PRIVATE_SPACE_ID,
+							Space::COMMUNITY_SPACE_ID,
+							Space::PUBLIC_SPACE_ID
+						]
+					],
+				]
+			);
 
 			$setSpaceDisk = array(
 				// パブリックルームの容量
