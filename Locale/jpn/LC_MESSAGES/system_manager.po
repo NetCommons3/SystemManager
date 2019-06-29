@@ -50,6 +50,12 @@ msgstr "無制限"
 msgid "App.default_timezone"
 msgstr "デフォルトのタイムゾーン"
 
+msgid "App.disk_for_public_room"
+msgstr "各パブリックルームの容量"
+
+msgid "App.disk_for_public_room help"
+msgstr "各パブリックルームにアップロードできるファイルの総量を指定します。"
+
 #: SystemManager/View/Elements/SystemManager/general_form.ctp:37
 msgid "App.disk_for_group_room"
 msgstr "各コミュニティの容量"
