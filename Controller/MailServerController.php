@@ -41,7 +41,8 @@ class MailServerController extends SystemManagerAppController {
 		//メール通知の場合、NetCommonsMailUtilityをメンバー変数にセットする。Mockであれば、newをしない。
 		//テストでMockに差し替えが必要なための処理であるので、カバレッジレポートから除外する。
 		//@codeCoverageIgnoreStart
-		if ($this->params['action'] === 'trial' && substr(get_class($this->mail), 0, 4) !== 'Mock') {
+		if ($this->params['action'] === 'trial' &&
+				(empty($this->mail) || substr(get_class($this->mail), 0, 4) !== 'Mock')) {
 			$this->mail = new NetCommonsMail();
 		}
 		//@codeCoverageIgnoreEnd
